@@ -1,5 +1,7 @@
 package com.qo.m;
 
+
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -8,14 +10,18 @@ public class Faculty {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	@Column(name="FacultyName")
 	private String FName;
-
+	
+    @Column(name="FacultyCode")
 	private String Code;
 	
+    @Column(name="FacultyShortname")
 	private String ShortName;
-	private String locaion;
-	private String Scampus;
-	private String SFaculty;
+	
+    @Column(name="location")
+    private String locaion;
 	
 	public String getFName() {
 		return FName;
@@ -29,12 +35,8 @@ public class Faculty {
 	public String getLocaion() {
 		return locaion;
 	}
-	public String getScampus() {
-		return Scampus;
-	}
-	public String getSFaculty() {
-		return SFaculty;
-	}
+	
+	
 	public void setFName(String fName) {
 		FName = fName;
 	}
@@ -47,16 +49,11 @@ public class Faculty {
 	public void setLocaion(String locaion) {
 		this.locaion = locaion;
 	}
-	public void setScampus(String scampus) {
-		Scampus = scampus;
-	}
-	public void setSFaculty(String sFaculty) {
-		SFaculty = sFaculty;
-	}
+	
 	@Override
 	public String toString() {
 		return "Faculty [FName=" + FName + ", Code=" + Code + ", SName=" + ShortName + ", locaion=" + locaion + ", Scampus="
-				+ Scampus + ", SFaculty=" + SFaculty + "]";
+				+ ", SFaculty=" + "]";
 	}
 
 }

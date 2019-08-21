@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 
-@ComponentScan
+///@ComponentScan({"com.qo.c","com.qo.s"})
 @SpringBootApplication
 public class InfoApplication {
 

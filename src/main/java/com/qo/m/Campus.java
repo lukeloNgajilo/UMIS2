@@ -1,5 +1,6 @@
 package com.qo.m;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,12 +12,23 @@ public class Campus {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	@Column(name="CampusName")
 	private String CName;
+
+	
 	private String location;
+	
+	
 	private String Region;
+	
+	
 	private String Contacts;
+	
+
 	private String Website;
-	private String Faculty;
+	
+	@Column(name="Shortname")
 	private String ShortName;
 	
 	
@@ -35,9 +47,8 @@ public class Campus {
 	public String getWebsite() {
 		return Website;
 	}
-	public String getFaculty() {
-		return Faculty;
-	}
+	
+	
 	public String getShortName() {
 		return ShortName;
 	}
@@ -56,16 +67,14 @@ public class Campus {
 	public void setWebsite(String website) {
 		Website = website;
 	}
-	public void setFaculty(String faculty) {
-		Faculty = faculty;
-	}
+	
 	public void setShortName(String shortName) {
 		ShortName = shortName;
 	}
 	@Override
 	public String toString() {
 		return "Campus [CName=" + CName + ", location=" + location + ", Region=" + Region + ", Contacts=" + Contacts
-				+ ", Website=" + Website + ", Faculty=" + Faculty + ", ShortName=" + ShortName + "]";
+				+ ", Website=" + Website + ", Faculty=" + ", ShortName=" + ShortName + "]";
 	}
 	
 }

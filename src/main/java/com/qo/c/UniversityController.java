@@ -20,7 +20,7 @@ public class UniversityController {
 	UniversityService universityservice;
 
 	@ResponseBody
-	 @RequestMapping("/")
+	 @RequestMapping("/dfdfdff")
 		public String uni()
 		{
 			

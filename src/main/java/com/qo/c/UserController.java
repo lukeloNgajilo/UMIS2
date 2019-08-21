@@ -35,11 +35,11 @@ public class UserController {
 		return"WELCOME";
 	}
 	
-	@RequestMapping("/")
+	@RequestMapping("/lo")
 	public String done()
 	{
 		
-		return"login";
+		return"campus";
 		
 	}
 	

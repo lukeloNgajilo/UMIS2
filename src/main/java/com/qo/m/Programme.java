@@ -1,23 +1,34 @@
 package com.qo.m;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Programme {
-
-	
-	private String name;
+    
 	@Id
-	()
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
+	@Column(name="ProgrammeName")
+	private String name;
+
+	@Column(name="ProgrammeCode")
 	private String code;
 	
+	@Column(name="ProgrammeType")
 	private String Otype;
 	
+	@Column(name="ProgrammeShortname")
 	private String ShortName;
 	
+	@Column(name="DurationofProgramme")
 	private String Year;
 	
+	@Column(name="Faculty")
 	private String Faculty;
 	
 			

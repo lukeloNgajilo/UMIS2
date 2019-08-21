@@ -33,9 +33,11 @@ public class University {
 	
     @Column(name="NumberOfcampus")
     private int Ncampus;
-	@Column(name="")
+	
+    @Column(name="Contacts")
     private String Contacts;
-	public String getUname() {
+	
+    public String getUname() {
 		return Uname;
 	}
 	public void setUname(String uname) {
