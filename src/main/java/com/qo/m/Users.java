@@ -7,11 +7,11 @@ import org.hibernate.annotations.DynamicUpdate;
 
 
 @Entity
-@Table(name="USERS")
-public class User {
+@Table(name="Users")
+public class Users {
     
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private  int id;
 	
 	@Column(name="Name")
@@ -25,7 +25,7 @@ public class User {
 	
 	private String email;
 	
-	public User(String name, String password, String email) {
+	public Users(String name, String password, String email) {
 		super();
 		this.name = name;
 		this.password = password;

@@ -82,11 +82,11 @@
         </button>
       </div>
       <div class="modal-body">
-  <form class="form-horizontal" role="form" action="">
+  <form class="form-horizontal" role="form" action="saveuser" method="post">
       <div class="form-group">
 
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Uname" placeholder="Name" required="this" />
+                  <input type="text" class="form-control" name="Name" placeholder="Name" required="this" />
               </div>
             </div>
               <div class="form-group">
@@ -102,13 +102,11 @@
             </div>
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="password" placeholder="password" required="this" />
+                  <input type="password" class="form-control" name="password" placeholder="password" required="this" />
               </div>
             </div>
              <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="role" placeholder="role" required="this" />
-              </div>
+            
             </div>
             
           

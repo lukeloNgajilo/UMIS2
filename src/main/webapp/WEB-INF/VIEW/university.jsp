@@ -88,7 +88,7 @@
         </button>
       </div>
       <div class="modal-body bg-secondary">
-  <form class="form-horizontal" role="form" action="">
+  <form class="form-horizontal" role="form" action="saveuniversity" method="get">
       <div class="form-group">
 
               <div class="col-sm-12">

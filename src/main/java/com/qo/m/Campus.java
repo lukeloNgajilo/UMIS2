@@ -5,13 +5,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="campus")
 public class Campus {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int UniversityId;
 	
 	@Column(name="CampusName")
 	private String CName;
@@ -28,8 +33,8 @@ public class Campus {
 
 	private String Website;
 	
-	@Column(name="Shortname")
-	private String ShortName;
+	
+	private String Shortname;
 	
 	
 	public String getCName() {
@@ -50,7 +55,7 @@ public class Campus {
 	
 	
 	public String getShortName() {
-		return ShortName;
+		return Shortname;
 	}
 	public void setCName(String cName) {
 		CName = cName;
@@ -69,12 +74,12 @@ public class Campus {
 	}
 	
 	public void setShortName(String shortName) {
-		ShortName = shortName;
+		Shortname = shortName;
 	}
 	@Override
 	public String toString() {
 		return "Campus [CName=" + CName + ", location=" + location + ", Region=" + Region + ", Contacts=" + Contacts
-				+ ", Website=" + Website + ", Faculty=" + ", ShortName=" + ShortName + "]";
+				+ ", Website=" + Website + ", Faculty=" + ", ShortName=" + Shortname + "]";
 	}
 	
 }

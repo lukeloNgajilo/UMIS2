@@ -18,19 +18,19 @@ private UserRespo userrespo;
 
 
 	@Override
-	public User saveuser(User user) {
+	public Users saveuser(Users user) {
 		// TODO Auto-generated method stub
 		return userrespo.save(user);
 	}
 
 	@Override
-	public User updateuser(User user) {
+	public Users updateuser(Users user) {
 		// TODO Auto-generated method stub
 		return userrespo.save(user);
 	}
 
 	@Override
-	public void deleteuser(User user) {
+	public void deleteuser(Users user) {
 		// TODO Auto-generated method stub
             userrespo.delete(user);
 	}
@@ -38,7 +38,7 @@ private UserRespo userrespo;
 
 
 	@Override
-	public List<User> getallusers() {
+	public List<Users> getallusers() {
 		// TODO Auto-generated method stub
 		return userrespo.findAll();
 	}

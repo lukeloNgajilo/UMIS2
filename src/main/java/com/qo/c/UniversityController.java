@@ -1,7 +1,9 @@
 package com.qo.c;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,36 +14,32 @@ import com.qo.s.UniversityService;
 
 import javax.persistence.GeneratedValue;
 
-@RestController
+@Controller
 public class UniversityController {
 
 	
 	@Autowired
 	UniversityService universityservice;
 
-	@ResponseBody
-	 @RequestMapping("/dfdfdff")
+	
+	 @GetMapping("university")
 		public String uni()
 		{
 			
 			return"university";
 			
 		}
-	 @RequestMapping("/one")
-	 public String nam()
-	 {
-		 return"Tanzania";
-	 }
+	
 		
 	
-	@RequestMapping("/saveduni")
- public String saveuniversityLogin(@ModelAttribute("university")University university,ModelMap modelMap) {
+	@GetMapping("/saveuniversity")
+ public String saveuniversity(@ModelAttribute("university")University university,ModelMap modelMap) {
 	universityservice.saveuniversity(university);
 	University universitysaved=universityservice.saveuniversity(university);
 	String msg="university saved with id "+universitysaved.getUname();
 	modelMap.addAttribute("msg",msg);
 	 
-	return"uni";
+	return"university";
 	}
 	
 	

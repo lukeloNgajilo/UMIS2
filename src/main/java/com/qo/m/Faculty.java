@@ -8,7 +8,7 @@ import javax.persistence.Id;
 
 public class Faculty {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(name="FacultyName")

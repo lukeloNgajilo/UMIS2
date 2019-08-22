@@ -10,9 +10,6 @@ import com.qo.respo.Programmerespo;
 @Component
 public class Programmeimpl implements Programmeservice {
  
-	
-	
-	
 	@Autowired
 	Programmerespo programmerespo;
 	

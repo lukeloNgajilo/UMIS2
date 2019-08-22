@@ -84,11 +84,11 @@
         </button>
       </div>
       <div class="modal-body bg-secondary ">
-  <form class="form-horizontal" role="form" action="">
+  <form class="form-horizontal" role="form" action="savecampus" method="post">
       <div class="form-group">
 
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Cname" placeholder="CampusName" required="this" />
+                  <input type="text" class="form-control" name="CName" placeholder="CampusName" required="this" />
               </div>
             </div>
               <div class="form-group">
@@ -110,11 +110,6 @@
             <div class="form-group">
               <div class="col-sm-12">
                   <input type="text" class="form-control" name="Website" placeholder="Website" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Faculty" placeholder="Faculty" required="this" />
               </div>
             </div>
             <div class="form-group">

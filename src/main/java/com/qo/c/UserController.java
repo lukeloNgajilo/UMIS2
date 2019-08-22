@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.qo.m.User;
+import com.qo.m.Users;
 import com.qo.s.UserService;
 
 
@@ -21,37 +21,24 @@ public class UserController {
 	@Autowired
 	 UserService userservice;
 	
-    @ResponseBody
-	@GetMapping("/lala")
-	public String login()
-	{		
-		return "two";
-	}
-	
-
-	@RequestMapping("/lap")
-	public String lap()
-	{		
-		return"WELCOME";
-	}
-	
-	@RequestMapping("/lo")
-	public String done()
+    
+	@RequestMapping("/user")
+	public String userp()
 	{
 		
-		return"campus";
+		return"Users";
 		
 	}
 	
 	
-	@RequestMapping("/savelogin")
- public String saveUserLogin(@ModelAttribute("user")User user,ModelMap modelMap) {
+	@RequestMapping("/saveuser")
+ public String saveUser(@ModelAttribute("user")Users user,ModelMap modelMap) {
 	
-	User usersaved=userservice.saveuser(user);
+	Users usersaved=userservice.saveuser(user);
 	String msg="user saved with id "+usersaved.getName();
 	modelMap.addAttribute("msg",msg);
 	 
-	return"one";
+	return"Users";
 	}
 	
 
