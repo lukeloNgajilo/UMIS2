@@ -11,27 +11,26 @@ import java.util.List;
 public class Deparment {
 
 
-	@ManyToOne
-	@JoinColumn(name="Faculty_id")
-	private Faculty faculty;
-
-
-
+	//@ManyToOne
+	//@JoinColumn(name="Faculty_id")
+	//private Faculty faculty;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
-	
-	private String DName;
 
+   @Column(name="DeparmentName",nullable=false)
+	private String DName;
+@Column(nullable=false)
   private String code;
+
+  @Column(name="HeadOfdeparmnet",nullable=false)
   private String HOD;
-  
+  @Column(nullable=false)
   private String Faculty;
 
 
-  
+
 public String getDName() {
 	return DName;
 }

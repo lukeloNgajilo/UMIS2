@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+ <%--    <%@page  isELIgnored="false" %> --%>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -97,7 +99,17 @@
             </div>
               <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Otype" placeholder="Organization type" required="this" />
+               <select class="mdb-select md-form" name="organization">
+                  <option selected>Choose Organization</option>
+ <c:forEach items ="${organization}" var="organizations">
+              <option value="${organizations.id}">${organizations.name}</option>
+            </c:forEach>
+        
+</select>
+
+<!--/Blue select-->
+            
+            
               </div>
             </div>
           
@@ -126,10 +138,10 @@
                   <input type="text" class="form-control" name="Ncampus" placeholder="Number of campus" required="this" />
               </div>
             </div>
-             <div class="form-group">
               <div class="col-sm-12">
                   <input type="text" class="form-control" name="Contacts" placeholder="Contacts" required="this" />
               </div>
+             <div class="form-group">
             </div>
             
 
@@ -146,21 +158,28 @@
     </div>
   </div>
 </div>
-
-
           </ul>
         </div>
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>e>hear we come</p>
+        <h1 class="mt-4">Simple Sidebar</h1>   
+      <div class="float-right"> <button type="submit" class="btn btn-primary mb-2">EDIT</button></div>
+      
+      <c:forEach items =" "var="">
+              <div class="float-right"> <button type="submit" class="btn btn-primary mb-2">EDIT</button></div>
+      
+            </c:forEach>
+      
+      
+      
+      
       </div>
     </div>
     <!-- /#page-content-wrapper -->
 
   </div>
-  <!-- /#wrapper -->
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

@@ -6,43 +6,49 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
-
 public class University {
 	
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="Universityname")
+	@Column(name="Universityname",nullable=false)
 	private String Uname;
 	
-	@Column(name="location")
+	@Column(name="location",nullable=false)
 	private String Location;
 	
-	@Column(name="Campus")
+	@Column(name="Campus",nullable=false)
      private String Campus;
 	
-	@Column(name="website")
+	@Column(name="website",nullable=false)
 	private String Website;
     
-	@Column(name="PostalAddress")
+	@Column(name="PostalAddress",nullable=false)
 	private String PAddress;
 	
-    @Column(name="NumberOfcampus")
+    @Column(name="NumberOfcampus",nullable=false)
     private int Ncampus;
 	
-    @Column(name="Contacts")
+    @Column(name="Contacts",nullable=false)
     private String Contacts;
 
 
-	@JoinColumn(name = "Organization_id")
-	@ManyToOne
-	private Organization organization;
+	//@JoinColumn(name = "Organization_id",nullable=false,insertable = true, updatable = false)
+	//@ManyToOne
+	//private Organization organization;
 
+   
+	private int organization_id;
 
-
-
+	
+	public int getCountry() {
+	return organization_id;
+}
+public void setCountry(int country) {
+	this.organization_id= country;
+}
 	public String getUname() {
 		return Uname;
 	}
@@ -50,7 +56,6 @@ public class University {
 		Uname = uname;
 	}
 	
-
 	
 	public String getLocation() {
 		return Location;

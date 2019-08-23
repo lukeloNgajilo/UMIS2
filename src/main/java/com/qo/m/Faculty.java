@@ -14,22 +14,22 @@ public class Faculty {
 
 	
 	
-	@Column(name="FacultyName")
+	@Column(name="FacultyName",nullable=false)
 	private String FName;
 	
-    @Column(name="FacultyCode")
+    @Column(name="FacultyCode",nullable=false)
 	private String Code;
 	
-    @Column(name="Shortname")
+    @Column(name="Shortname",nullable=false)
 	private String ShortName;
 	
-    @Column(name="location")
+    @Column(name="location",nullable=false)
     private String locaion;
 	
 	
-    @JoinColumn(name = "Campus_id")
-	@ManyToOne
-	private Campus Campus;
+  //  @JoinColumn(name = "Campus_id",nullable=false)
+//	@ManyToOne
+	//private Campus Campus;
     
     
     

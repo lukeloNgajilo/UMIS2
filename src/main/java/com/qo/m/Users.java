@@ -17,19 +17,20 @@ public class Users {
 	private  int id;
 	
     @NotBlank(message = "Enter name")
-	@Column(name="Name")
+	@Column(name="Name",nullable=false)
 	private  String name;
 
     @Size(max=10)
 	@NotBlank(message = "Enter name")
-	@Column(name="telephone")
+	@Column(name="telephone",nullable=false)
 	private String Telephone;
 
 	@NotBlank(message = "Enter name")
-	@Column(name="Password")
+	@Column(name="Password",nullable=false)
 	private String password;
 
 	@NotBlank(message = "Enter name")
+	@Column(nullable=false)
 	private String email;
 	
 	public Users(String name, String password, String email) {

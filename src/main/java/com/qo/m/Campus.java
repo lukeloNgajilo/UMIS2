@@ -16,28 +16,28 @@ public class Campus {
 	private int id;
 
 
-	@JoinColumn(name = "University_id")
-	@ManyToOne
-	private University university;
+//	@JoinColumn(name = "University_id",nullable=false)
+	//@ManyToOne
+	//private University university;
 
 
 
-	@Column(name="CampusName")
+	@Column(name="CampusName",nullable=false)
 	private String CName;
 
-	
+	@Column(nullable=false)
 	private String location;
 	
-	
+	@Column(nullable=false)
 	private String Region;
 	
-	
+	@Column(nullable=false)
 	private String Contacts;
 	
-
+	@Column(nullable=false)
 	private String Website;
 	
-	
+	@Column(nullable=false)
 	private String Shortname;
 	
 	

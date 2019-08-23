@@ -8,16 +8,38 @@ import java.util.List;
 @Entity
 @Component
 public class Organization {
-   @Id
-    private int id;
+   public Organization() {
+		super();
+	}
 
-   @Column(name="OrganizationName")
-    private String name;
+    @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id ;    
+    
+    
+   
+   public int getId() {
+		return id;
+	}
 
 
 
-    public Organization() {
-    }
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+@Column(name="OrganizationName")
+   private String name;
+
+    public Organization(int id, String name) {
+	super();
+	this.id = id;
+	this.name = name;
+}
+
+	
+
 
     public String getName() {
         return name;
