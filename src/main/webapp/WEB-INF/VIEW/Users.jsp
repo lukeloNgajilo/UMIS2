@@ -128,7 +128,7 @@
 
       <div class="container-fluid">
         <h1 class="mt-4">Simple Sidebar</h1>
-        <p>e>hear we come</p>
+        <p>e>hear we come    ${msg}</p>
       </div>
     </div>
     <!-- /#page-content-wrapper -->

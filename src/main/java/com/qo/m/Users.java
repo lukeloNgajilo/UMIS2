@@ -1,6 +1,8 @@
 package com.qo.m;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -11,18 +13,23 @@ import org.hibernate.annotations.DynamicUpdate;
 public class Users {
     
 	@Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
+     @GeneratedValue(strategy = GenerationType.AUTO)
 	private  int id;
 	
+    @NotBlank(message = "Enter name")
 	@Column(name="Name")
 	private  String name;
-	
+
+    @Size(max=10)
+	@NotBlank(message = "Enter name")
 	@Column(name="telephone")
 	private String Telephone;
-	
+
+	@NotBlank(message = "Enter name")
 	@Column(name="Password")
 	private String password;
-	
+
+	@NotBlank(message = "Enter name")
 	private String email;
 	
 	public Users(String name, String password, String email) {

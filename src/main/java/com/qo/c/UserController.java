@@ -1,6 +1,7 @@
 package com.qo.c;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,13 +18,14 @@ import com.qo.s.UserService;
 @Controller
 public class UserController {
 
-	
+
+
 	@Autowired
 	 UserService userservice;
 	
     
 	@RequestMapping("/user")
-	public String userp()
+	public String user()
 	{
 		
 		return"Users";
@@ -35,7 +37,7 @@ public class UserController {
  public String saveUser(@ModelAttribute("user")Users user,ModelMap modelMap) {
 	
 	Users usersaved=userservice.saveuser(user);
-	String msg="user saved with id "+usersaved.getName();
+	String msg="users is"+usersaved.getName();
 	modelMap.addAttribute("msg",msg);
 	 
 	return"Users";

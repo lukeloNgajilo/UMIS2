@@ -1,15 +1,18 @@
 package com.qo.m;
 
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.List;
 
+import javax.persistence.*;
+@Entity
 public class Faculty {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+
+	
+
+	
 	
 	@Column(name="FacultyName")
 	private String FName;
@@ -17,13 +20,20 @@ public class Faculty {
     @Column(name="FacultyCode")
 	private String Code;
 	
-    @Column(name="FacultyShortname")
+    @Column(name="Shortname")
 	private String ShortName;
 	
     @Column(name="location")
     private String locaion;
 	
-	public String getFName() {
+	
+    @JoinColumn(name = "Campus_id")
+	@ManyToOne
+	private Campus Campus;
+    
+    
+    
+    public String getFName() {
 		return FName;
 	}
 	public String getCode() {

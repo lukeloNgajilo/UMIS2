@@ -1,16 +1,14 @@
 package com.qo.m;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Programme {
-    
+
+
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
 	@Column(name="ProgrammeName")
@@ -30,8 +28,15 @@ public class Programme {
 	
 	@Column(name="Faculty")
 	private String Faculty;
-	
-			
+
+	@ManyToOne
+	@JoinColumn(name="Deparment_id")
+	private Deparment deparment;
+
+
+
+
+
 	public String getCode() {
 		return code;
 	}

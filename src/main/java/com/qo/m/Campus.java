@@ -1,23 +1,27 @@
 package com.qo.m;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
+
+import javax.persistence.*;
+
+import org.hibernate.annotations.NaturalId;
+import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name="campus")
+
 public class Campus {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int UniversityId;
-	
+	private int id;
+
+
+	@JoinColumn(name = "University_id")
+	@ManyToOne
+	private University university;
+
+
+
 	@Column(name="CampusName")
 	private String CName;
 
@@ -54,7 +58,7 @@ public class Campus {
 	}
 	
 	
-	public String getShortName() {
+	public String getShortname() {
 		return Shortname;
 	}
 	public void setCName(String cName) {
@@ -73,7 +77,7 @@ public class Campus {
 		Website = website;
 	}
 	
-	public void setShortName(String shortName) {
+	public void setShortname(String shortName) {
 		Shortname = shortName;
 	}
 	@Override

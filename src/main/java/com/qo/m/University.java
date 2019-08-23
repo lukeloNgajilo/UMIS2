@@ -1,14 +1,12 @@
 package com.qo.m;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.*;
 
 @Entity
-@Table(name="Univer")
+
 public class University {
 	
 
@@ -36,8 +34,16 @@ public class University {
 	
     @Column(name="Contacts")
     private String Contacts;
-	
-    public String getUname() {
+
+
+	@JoinColumn(name = "Organization_id")
+	@ManyToOne
+	private Organization organization;
+
+
+
+
+	public String getUname() {
 		return Uname;
 	}
 	public void setUname(String uname) {
