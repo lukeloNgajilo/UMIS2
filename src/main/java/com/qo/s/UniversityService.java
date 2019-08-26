@@ -1,6 +1,7 @@
 package com.qo.s;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.qo.m.*;
 
@@ -12,7 +13,7 @@ public interface UniversityService {
 University updateuniversity(University university);
 	
 	void deleteuniversity(University university);
-	   
-    List<University> getalluniversity();
+	 University getalluniversitybyId(int id);
+    List <University> getalluniversity();
 
 }

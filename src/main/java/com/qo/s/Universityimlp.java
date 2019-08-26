@@ -1,6 +1,7 @@
 package com.qo.s;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,9 +32,14 @@ public class Universityimlp implements UniversityService {
 	}
 
 	@Override
-	public List<University> getalluniversity() {
-		// TODO Auto-generated method stub
+	public List<University>getalluniversity(){
+		
+		
 		return universityrespo.findAll();
 	}
+public University getalluniversitybyId(int id) {
+		//TODO Auto-generated method stub
+		return universityrespo.getOne(id);
 
+}
 }

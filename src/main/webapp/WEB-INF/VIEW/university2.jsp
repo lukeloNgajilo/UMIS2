@@ -79,8 +79,9 @@
   ADD
 </button>
 <button type="button" class="btn btn-primary">
-  <a href="/viewuniversity">VIEW</a>
+  VIEW
 </button>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -96,11 +97,12 @@
       <div class="form-group">
 
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="uname" placeholder="UniversityName" required="this" />
+                  <input type="text" class="form-control" name="uname" placeholder="UniversityName" value= "${organizations.name}" required="this" />
               </div>
             </div>
               <div class="form-group">
               <div class="col-sm-12">
+                 <div class="col-sm-12">
                <select class="mdb-select md-form" name="organization">
                   
  <c:forEach items ="${organization}" var="organizations">
@@ -108,50 +110,42 @@
             </c:forEach>
         
 </select>
-
-
-            
-            
+             
               </div>
             </div>
           
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Location" placeholder="Location" required="this" />
+                   <input type="text" class="form-control" name="Location" placeholder="Location" value="<%-- ${university.uname} --%>" required="this" />
+               </div>
+            </div>
+             <div class="form-group">
+              <div class="col-sm-12">
+                  <input type="text" class="form-control" name="Campus" placeholder="Campus" value="<%-- ${university.campus} --%>" required="this" />
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Campus" placeholder="Campus" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control"  name="Website" placeholder="Website" required="this" />
+                  <input type="text" class="form-control"  name="Website" placeholder="Website"value="<%-- ${university.website} --%>" required="this" />
               </div>
             </div>
             
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="PAddress" placeholder="PostalAddress" required="this" />
+                  <input type="text" class="form-control" name="PAddress" placeholder="PostalAddress" value="<%-- ${university.PAddress } --%>" required="this" />
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="ncampus" placeholder="Number of campus" required="this" />
+                  <input type="text" class="form-control" name="ncampus" placeholder="Number of campus"  value="<%-- ${university.ncampus} --%>"required="this" />
               </div>
             </div>
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Contacts" placeholder="Contacts" required="this" />
+                  <input type="text" class="form-control" name="Contacts" placeholder="Contacts" value="<%-- ${university.contacts} --%>"required="this" />
               </div>
              <div class="form-group">
             </div>
             
-
-
-
-
-
       </div>
       <div class="modal-footer bg-secondary">
         <button type="button" class="btn btn-primary " data-dismiss="modal">Close</button>
@@ -165,10 +159,10 @@
         </div>
       </nav>
 
-      <div class="container-fluid">  
-       <%--   <table class="table table-hover table-fixed">
+  <div class="container-fluid">  
+        <table class="table table-hover table-fixed">
             <tr>
-            	<th>university id</th> 
+            
                <th>University name</th>
                <th>organization type</th>
                <th> location</th>
@@ -182,7 +176,7 @@
            </tr>
     <c:forEach items ="${university}" var="university" >
              <tr>
-                   <td>${university.id}</td> 
+                   
                 <td>${university.uname}</td>
                  <td>${university.location}</td>  
                   <td>${university.campus}</td>
@@ -190,14 +184,28 @@
                  <td>${university.PAddress}</td>
                <td>${university.ncampus}</td>
                  <td>${university.contacts}</td> 
-            <td>   <button  type="submit"  class="btn btn-primary"><a href="/a?id=${university.id}">EDIT</a></button> </td>
-             <td>   <button type="submit"  class="btn btn-primary"><ahref="/showeditfrom?id=${university.id}">DELETE</a></button> \</td>
+            <td>   <button  type="submit"  class="btn btn-primary"><a href="/edituniversity?id=${university.id}">EDIT</a></button> </td>
+             <td>   <button type="submit"  class="btn btn-primary"><a href="/deleteuniversity?id=${university.id}">DELETE</a></button> </td>
              </tr>
  -           
                  </c:forEach>
        </table>
- --%>
  
+ 
+
+     
+
+
+
+
+
+
+
+
+
+
+
+     
 
       </div>
     </div>
@@ -205,7 +213,7 @@
 
   </div>
 
-
+            
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

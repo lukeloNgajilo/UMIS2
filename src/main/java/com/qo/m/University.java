@@ -10,16 +10,23 @@ public class University {
 	
 
 	@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(name="Universityname",nullable=false)
 	private String Uname;
 	
 	@Column(name="location",nullable=false)
-	private String Location;
+	private String location;
 	
-	@Column(name="Campus",nullable=false)
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Column(name="campus",nullable=false)
      private String Campus;
 	
 	@Column(name="website",nullable=false)
@@ -29,9 +36,9 @@ public class University {
 	private String PAddress;
 	
     @Column(name="NumberOfcampus",nullable=false)
-    private int Ncampus;
+    private int ncampus;
 	
-    @Column(name="Contacts",nullable=false)
+    @Column(name="contacts",nullable=false)
     private String Contacts;
 
 
@@ -58,7 +65,7 @@ public void setCountry(int country) {
 	
 	
 	public String getLocation() {
-		return Location;
+		return location;
 	}
 	public String getCampus() {
 		return Campus;
@@ -70,17 +77,18 @@ public void setCountry(int country) {
 		return PAddress;
 	}
 	public int getNcampus() {
-		return Ncampus;
+		return ncampus;
 	}
 	public String getContacts() {
 		return Contacts;
 	}
 	
 	
-	public void setLocation(String location) {
-		Location = location;
+	public void setLocation(String locatio) {
+		location = locatio;
 	}
 	public void setCampus(String campus) {
+		
 		Campus = campus;
 	}
 	public void setWebsite(String website) {
@@ -90,7 +98,7 @@ public void setCountry(int country) {
 		PAddress = pAddress;
 	}
 	public void setNcampus(int ncampus) {
-		Ncampus = ncampus;
+		ncampus = ncampus;
 	}
 	public void setContacts(String contacts) {
 		Contacts = contacts;
@@ -98,8 +106,8 @@ public void setCountry(int country) {
 	
 	@Override
 	public String toString() {
-		return "University [Uname=" + Uname + ", Otype=" + ", Location=" + Location + ", Campus=" + Campus
-				+ ", Website=" + Website + ", PAddress=" + PAddress + ", Ncampus=" + Ncampus + ", Contacts=" + Contacts
+		return "University [Uname=" + Uname + ", Otype=" + ", location=" + location + ", Campus=" + Campus
+				+ ", Website=" + Website + ", PAddress=" + PAddress + ", ncampus=" + ncampus + ", Contacts=" + Contacts
 				+ "]";
 	}
 

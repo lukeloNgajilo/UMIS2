@@ -76,7 +76,7 @@
            
            <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
+  EDIT
 </button>
 <button type="button" class="btn btn-primary">
   <a href="/viewuniversity">VIEW</a>
@@ -96,7 +96,7 @@
       <div class="form-group">
 
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="uname" placeholder="UniversityName" required="this" />
+                  <input type="text" class="form-control" name="uname" placeholder="UniversityName" value="${university.uname}"required="this" />
               </div>
             </div>
               <div class="form-group">
@@ -117,32 +117,32 @@
           
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Location" placeholder="Location" required="this" />
+                  <input type="text" class="form-control" name="Location" placeholder="Location" value="${university.location}" required="this" />
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Campus" placeholder="Campus" required="this" />
+                  <input type="text" class="form-control" name="Campus" placeholder="Campus" value=" ${university.campus} "required="this" />
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control"  name="Website" placeholder="Website" required="this" />
+                  <input type="text" class="form-control"  name="Website" placeholder="Website" value="${university.website}" required="this" />
               </div>
             </div>
             
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="PAddress" placeholder="PostalAddress" required="this" />
+                  <input type="text" class="form-control" name="PAddress" placeholder="PostalAddress" value="${university.PAddress }" required="this" />
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="ncampus" placeholder="Number of campus" required="this" />
+                  <input type="text" class="form-control" name="ncampus" placeholder="Number of campus" value="${university.ncampus}" required="this" />
               </div>
             </div>
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Contacts" placeholder="Contacts" required="this" />
+                  <input type="text" class="form-control" name="Contacts" placeholder="Contacts" value="${university.contacts}" required="this" />
               </div>
              <div class="form-group">
             </div>
@@ -165,10 +165,10 @@
         </div>
       </nav>
 
-      <div class="container-fluid">  
-       <%--   <table class="table table-hover table-fixed">
+    <%--   <div class="container-fluid">  
+         <table class="table table-hover table-fixed">
             <tr>
-            	<th>university id</th> 
+            <!-- 	<th>university id</th> -->
                <th>University name</th>
                <th>organization type</th>
                <th> location</th>
@@ -196,9 +196,9 @@
  -           
                  </c:forEach>
        </table>
- --%>
- 
 
+ 
+ --%>
       </div>
     </div>
     <!-- /#page-content-wrapper -->
