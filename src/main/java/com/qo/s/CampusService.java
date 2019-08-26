@@ -13,5 +13,7 @@ public interface CampusService {
 		void deletecampus(Campus campus);
 		   
 	    List<Campus> getallCampus();
+	    Campus getCampusById(int id);
+
 	
 }

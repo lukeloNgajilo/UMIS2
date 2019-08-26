@@ -97,7 +97,7 @@
       <div class="form-group">
 
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="uname" placeholder="UniversityName" value= "${organizations.name}" required="this" />
+                  <input type="text" class="form-control" name="uname" placeholder="UniversityName" required="this" />
               </div>
             </div>
               <div class="form-group">
@@ -116,32 +116,32 @@
           
             <div class="form-group">
               <div class="col-sm-12">
-                   <input type="text" class="form-control" name="Location" placeholder="Location" value="<%-- ${university.uname} --%>" required="this" />
+                   <input type="text" class="form-control" name="Location" placeholder="Location"   required="this" />
                </div>
             </div>
              <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Campus" placeholder="Campus" value="<%-- ${university.campus} --%>" required="this" />
+                  <input type="text" class="form-control" name="Campus" placeholder="Campus"  required="this" />
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control"  name="Website" placeholder="Website"value="<%-- ${university.website} --%>" required="this" />
+                  <input type="text" class="form-control"  name="Website" placeholder="Website"  required="this" />
               </div>
             </div>
             
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="PAddress" placeholder="PostalAddress" value="<%-- ${university.PAddress } --%>" required="this" />
+                  <input type="text" class="form-control" name="PAddress" placeholder="PostalAddress"  required="this" />
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="ncampus" placeholder="Number of campus"  value="<%-- ${university.ncampus} --%>"required="this" />
+                  <input type="text" class="form-control" name="ncampus" placeholder="Number of campus" required="this" />
               </div>
             </div>
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Contacts" placeholder="Contacts" value="<%-- ${university.contacts} --%>"required="this" />
+                  <input type="text" class="form-control" name="Contacts" placeholder="Contacts"required="this" />
               </div>
              <div class="form-group">
             </div>
@@ -178,6 +178,7 @@
              <tr>
                    
                 <td>${university.uname}</td>
+                <td>${unie}</td>
                  <td>${university.location}</td>  
                   <td>${university.campus}</td>
                  <td>${university.website}</td>

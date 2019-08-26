@@ -42,11 +42,18 @@ public class University {
     private String Contacts;
 
 
-	//@JoinColumn(name = "Organization_id",nullable=false,insertable = true, updatable = false)
-	//@ManyToOne
-	//private Organization organization;
+	@JoinColumn(name = "Organization_id",nullable=false,insertable = false, updatable =false)
+	@ManyToOne
+	private Organization organization;
 
    
+	public Organization getOrganization() {
+		return organization;
+	}
+	public void setOrganization(Organization organization) {
+		this.organization = organization;
+	}
+
 	private int organization_id;
 
 	

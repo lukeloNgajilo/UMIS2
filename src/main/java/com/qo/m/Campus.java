@@ -39,7 +39,19 @@ public class Campus {
 	
 	@Column(nullable=false)
 	private String Shortname;
-	
+
+	@Column(name="university_id")
+	private int universityid;
+
+
+	public int getUniversityid() {
+		return universityid;
+	}
+
+	public void setUniversityid(int universityid) {
+		this.universityid = universityid;
+	}
+
 	
 	public String getCName() {
 		return CName;

@@ -32,12 +32,10 @@ public class Organization {
 @Column(name="OrganizationName")
    private String name;
 
-    public Organization(int id, String name) {
-	super();
-	this.id = id;
-	this.name = name;
-}
-
+	
+	  public Organization(int id, String name) { super(); this.id = id; this.name =
+	  name; }
+	
 	
 
 

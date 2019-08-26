@@ -39,4 +39,9 @@ DeparmentRespo deparmentrespo;
 		return deparmentrespo.findAll();
 	}
 
+	@Override
+   public Deparment getdeparmentbyid(int id) {
+		return deparmentrespo.getOne(id);
+	}
+
 }

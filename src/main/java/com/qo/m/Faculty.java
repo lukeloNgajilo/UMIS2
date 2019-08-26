@@ -10,10 +10,7 @@ public class Faculty {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	
 
-	
-	
 	@Column(name="FacultyName",nullable=false)
 	private String FName;
 	
@@ -25,7 +22,29 @@ public class Faculty {
 	
     @Column(name="location",nullable=false)
     private String locaion;
-	
+
+
+	public String getShortName() {
+		return ShortName;
+	}
+
+	public void setShortName(String shortName) {
+		ShortName = shortName;
+	}
+
+
+	@Column(name="campus_id")
+	private int campus_id;
+
+	public int getIcd() {
+		return campus_id;
+	}
+
+	public void setIcd(int icd) {
+		this. campus_id= icd;
+	}
+
+
 	
   //  @JoinColumn(name = "Campus_id",nullable=false)
 //	@ManyToOne

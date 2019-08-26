@@ -38,4 +38,9 @@ CampusRespo campusRespo;
 		return campusRespo.findAll();
 	}
 
+	@Override
+	public Campus getCampusById(int id) {
+		return campusRespo.getOne(id);
+	}
+
 }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+
 @Entity
 public class Deparment {
 
@@ -16,19 +16,40 @@ public class Deparment {
 	//private Faculty faculty;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
    @Column(name="DeparmentName",nullable=false)
 	private String DName;
-@Column(nullable=false)
-  private String code;
 
-  @Column(name="HeadOfdeparmnet",nullable=false)
-  private String HOD;
-  @Column(nullable=false)
-  private String Faculty;
+   	@Column(nullable=false)
+   	private String code;
 
+	@Column(name="HeadOfdeparmnet",nullable=false)
+	private String HOD;
+
+	@Column(nullable=false)
+	private String Faculty;
+
+	private int faculty_id;
+
+
+	public String getHOD() {
+		return HOD;
+	}
+
+	public void setHOD(String HOD) {
+		this.HOD = HOD;
+	}
+
+
+	public int getFaculty_id() {
+		return faculty_id;
+	}
+
+	public void setFaculty_id(int faculty_id) {
+		this.faculty_id = faculty_id;
+	}
 
 
 public String getDName() {
