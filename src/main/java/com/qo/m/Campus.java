@@ -16,26 +16,40 @@ public class Campus {
 	private int id;
 
 
-//	@JoinColumn(name = "University_id",nullable=false)
-	//@ManyToOne
-	//private University university;
+   public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+@JoinColumn(name = "University_id",nullable=false,insertable = false, updatable =false)
+	@ManyToOne(fetch = FetchType.EAGER)
+	private University university;
 
 
 
+	public University getUniversity() {
+	return university;
+}
+
+public void setUniversity(University university) {
+	this.university = university;
+}
 	@Column(name="CampusName",nullable=false)
-	private String CName;
+	private String cname;
 
 	@Column(nullable=false)
 	private String location;
 	
 	@Column(nullable=false)
-	private String Region;
+	private String region;
 	
 	@Column(nullable=false)
 	private String Contacts;
 	
 	@Column(nullable=false)
-	private String Website;
+	private String website;
 	
 	@Column(nullable=false)
 	private String Shortname;
@@ -54,19 +68,19 @@ public class Campus {
 
 	
 	public String getCName() {
-		return CName;
+		return cname;
 	}
 	public String getLocation() {
 		return location;
 	}
 	public String getRegion() {
-		return Region;
+		return region;
 	}
 	public String getContacts() {
 		return Contacts;
 	}
 	public String getWebsite() {
-		return Website;
+		return website;
 	}
 	
 	
@@ -74,19 +88,19 @@ public class Campus {
 		return Shortname;
 	}
 	public void setCName(String cName) {
-		CName = cName;
+		cname = cName;
 	}
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public void setRegion(String region) {
-		Region = region;
+	public void setRegion(String regon) {
+		region = regon;
 	}
 	public void setContacts(String contacts) {
 		Contacts = contacts;
 	}
-	public void setWebsite(String website) {
-		Website = website;
+	public void setWebsite(String wbsite) {
+		website = wbsite;
 	}
 	
 	public void setShortname(String shortName) {
@@ -94,8 +108,8 @@ public class Campus {
 	}
 	@Override
 	public String toString() {
-		return "Campus [CName=" + CName + ", location=" + location + ", Region=" + Region + ", Contacts=" + Contacts
-				+ ", Website=" + Website + ", Faculty=" + ", ShortName=" + Shortname + "]";
+		return "Campus [cname=" + cname + ", location=" + location + ", region=" + region + ", Contacts=" + Contacts
+				+ ", Website=" + website + ", Faculty=" + ", ShortName=" + Shortname + "]";
 	}
 	
 }

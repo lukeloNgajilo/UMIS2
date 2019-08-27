@@ -30,13 +30,13 @@ public class Facultycontroller {
     @Autowired
     Facultyservice facultyservice;
 
-        @RequestMapping("/aaaaaa")
+        @RequestMapping("/faculty")
         public String AddFaculty(ModelMap modelmap)
 {
     List<Campus>campus=Campusservice.getallCampus();
-
+    List<University>university=universityService.getalluniversity();
     modelmap.addAttribute("campus",campus);
-   return "";
+   return "faculty";
 
 }
 
@@ -59,11 +59,12 @@ public class Facultycontroller {
 {
      facultyservice.getfacultybyid(b);
     List<University>university=universityService.getalluniversity();
-    List<Organization> organization=organizationservice.getallOrganization();
+
      List<Campus>campus= Campusservice.getallCampus();
      List<Faculty>faculty=facultyservice.getallFaculty();
       modelMap.addAttribute("faculty",faculty);
       modelMap.addAttribute("campus",campus);
+      modelMap.addAttribute("university",university);
         return "";
 }
 

@@ -29,34 +29,41 @@ public class UniversityController {
 
 
 	
-	@RequestMapping("university")
-	public String adduniversity(ModelMap modelmap)
+	@RequestMapping("/university")
+	public String adduniversity(ModelMap modelmap,Organization organizato,University university)
 	{
+    //               university.getOrganization();
+		 ///modelmap.addAttribute("aaaa", university.getId() );
+		 
+		   //get
+		
+	      //  System.out.print(universit.getOrganization().getId());
+	       // modelmap.addAttribute("universit",universit.getOrganization().getId());
 		  List<Organization> organization=organizationservice.getallOrganization();
 		  modelmap.addAttribute("organization",organization);
+		  
+		  
+		  
+		 
 		return"university";
 	}
 	
 	 @RequestMapping("/viewuniversity")
 		public String viewdetails(ModelMap modelmap)
 		{
-		     University uni=new University();
-		System.out.print( uni.getOrganization().getName());
-		  List<Organization> organization=organizationservice.getallOrganization();
+		  List<Organization> organization=organizationservice.getallOrganization();	  
 		  List<University> university =universityservice.getalluniversity();
 		   modelmap.addAttribute("university",university);
 	      modelmap.addAttribute("organization",organization);
-		  modelmap.addAttribute("unie",uni)	;
+		 
 		  return"university2";
 			
 		}
 
-
-	
 	@RequestMapping("/saveuniversity")
- public String saveuniversity(@ModelAttribute("university")University university, @RequestParam("organization")String c) {
-		   int a=Integer.parseInt(c);
-		university.setCountry(a);
+ public String saveuniversity(@ModelAttribute("university")University university, @RequestParam("organization")String c,ModelMap modelmap) {
+		int a=Integer.parseInt(c);	  
+		university.setOrganization_id(a);        
 		universityservice.saveuniversity(university);
 	return"redirect:/viewuniversity";
 	}
@@ -68,9 +75,7 @@ public class UniversityController {
    University university =universityservice.getalluniversitybyId(b);
     List<Organization> organization=organizationservice.getallOrganization();
     modelmap.addAttribute("organization",organization);
-    
     modelmap.addAttribute("university",university);
-		
 		return"university3";
 	}
 	

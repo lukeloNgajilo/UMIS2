@@ -8,12 +8,9 @@ import java.util.List;
 @Entity
 @Component
 public class Organization {
-   public Organization() {
-		super();
-	}
-
+  
     @Id
-   @GeneratedValue(strategy = GenerationType.AUTO)
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id ;    
     
     
@@ -21,8 +18,6 @@ public class Organization {
    public int getId() {
 		return id;
 	}
-
-
 
 
 	public void setId(int id) {
@@ -35,7 +30,11 @@ public class Organization {
 	
 	  public Organization(int id, String name) { super(); this.id = id; this.name =
 	  name; }
-	
+	 
+	  public Organization()
+	  {
+		  
+	  }
 	
 
 

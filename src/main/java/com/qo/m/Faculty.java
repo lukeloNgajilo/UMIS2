@@ -46,9 +46,9 @@ public class Faculty {
 
 
 	
-  //  @JoinColumn(name = "Campus_id",nullable=false)
-//	@ManyToOne
-	//private Campus Campus;
+   @JoinColumn(name = "Campus_id",nullable=false,insertable = false, updatable =false)
+	@ManyToOne(fetch = FetchType.EAGER)
+	private Campus Campus;
     
     
     

@@ -29,9 +29,9 @@ public class Programme {
 	@Column(name="Faculty")
 	private String Faculty;
 
-	//@ManyToOne
-	//@JoinColumn(name="Deparment_id")
-	//private Deparment deparment;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="Deparment_id")
+	private Deparment deparment;
 
 
 

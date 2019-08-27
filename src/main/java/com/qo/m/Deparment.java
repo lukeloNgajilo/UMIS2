@@ -11,9 +11,9 @@ import java.util.List;
 public class Deparment {
 
 
-	//@ManyToOne
-	//@JoinColumn(name="Faculty_id")
-	//private Faculty faculty;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="Faculty_id",nullable=false,insertable = false, updatable =false)
+	private Faculty faculty;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

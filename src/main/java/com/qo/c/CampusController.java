@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.qo.m.Campus;
+import com.qo.m.Organization;
 import com.qo.respo.CampusRespo;
 import com.qo.s.*;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,43 +23,47 @@ public class CampusController {
 	
 	 @Autowired
 	UniversityService universityService;
+   
+	 @Autowired
+	 OrganizationService organizationService;
 
-
-	 @RequestMapping("/v")
+	 @RequestMapping("/campus")
 	 public String AddCampus(ModelMap modelmap)
 	 {
+	
 		 List<University>university=universityService.getalluniversity();
 	 	modelmap.addAttribute("university",university);
 
-	 	return"";
+	 	return"campus";
 	 }
 
 
-	   @RequestMapping("/a")
+	   @RequestMapping("/viewcampus")
 	   public String Viewcampus(ModelMap modelmap)
 	   {
-	   	List<Campus>campus=campusService.getallCampus();
+	     	List<Campus>campus=campusService.getallCampus();
 		   List<University>university=universityService.getalluniversity();
+		   List<Organization>organization=organizationService.getallOrganization();
 		   modelmap.addAttribute("university",university);
 		   modelmap.addAttribute("campus",campus);
 
-		   return"";
+		   return"campus2";
 	   }
 
 
-	@RequestMapping("/saveucampus")
+	@RequestMapping("/savecampus")
 	public String savecampus(@ModelAttribute("campus") Campus campus, ModelMap modelMap, @RequestParam("university")String c) {
 		int a = Integer.parseInt(c);
 		campus.setUniversityid(a);
 		campusService.savecampus(campus);
 
 
-		return "redirect:/viewuniversity";
+		return "redirect:/viewcampus";
 	}
 
 
 
-	   @RequestMapping("/aa")
+	   @RequestMapping("/editcampus")
 	   public String editcampuses(ModelMap modelMap,@RequestParam("id")int b)
 	   {
          campusService.getCampusById(b);
@@ -66,18 +71,18 @@ public class CampusController {
 	   	List<University>university=universityService.getalluniversity();
 	   	List<Campus>campus=campusService.getallCampus();
 	   	modelMap.addAttribute("university",university);
-
-	   	return"";
+        modelMap.addAttribute("campus",campus);
+	   	return"campus3";
 	   }
 
-	   @RequestMapping("//")
+	   @RequestMapping("/deletecampus")
 	   public String deleteCampus(ModelMap model,@RequestParam("id")int c)
 	   {
 		   Campus campus=campusService.getCampusById(c);
 	   	campusService.deletecampus(campus);
 
 
-	   	return"";
+	   	return"redirect:/viewcampus";
 	   }
 
 

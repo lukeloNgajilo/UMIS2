@@ -14,7 +14,7 @@ public class University {
 	private int id;
 	
 	@Column(name="Universityname",nullable=false)
-	private String Uname;
+	private String uname;
 	
 	@Column(name="location",nullable=false)
 	private String location;
@@ -41,9 +41,19 @@ public class University {
     @Column(name="contacts",nullable=false)
     private String Contacts;
 
+   private int organization_id;
+    
+    
+    
+    public int getOrganization_id() {
+	return organization_id;
+   }
+   public void setOrganization_id(int organization_id) {
+	this.organization_id = organization_id;
+    }
 
 	@JoinColumn(name = "Organization_id",nullable=false,insertable = false, updatable =false)
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Organization organization;
 
    
@@ -53,21 +63,12 @@ public class University {
 	public void setOrganization(Organization organization) {
 		this.organization = organization;
 	}
-
-	private int organization_id;
-
 	
-	public int getCountry() {
-	return organization_id;
-}
-public void setCountry(int country) {
-	this.organization_id= country;
-}
 	public String getUname() {
-		return Uname;
+		return uname;
 	}
-	public void setUname(String uname) {
-		Uname = uname;
+	public void setUname(String unme) {
+		uname = unme;
 	}
 	
 	
@@ -113,7 +114,7 @@ public void setCountry(int country) {
 	
 	@Override
 	public String toString() {
-		return "University [Uname=" + Uname + ", Otype=" + ", location=" + location + ", Campus=" + Campus
+		return "University [uname=" + uname + ", Otype=" + ", location=" + location + ", Campus=" + Campus
 				+ ", Website=" + Website + ", PAddress=" + PAddress + ", ncampus=" + ncampus + ", Contacts=" + Contacts
 				+ "]";
 	}

@@ -45,13 +45,13 @@
      
       <div class="list-group list-group-flush">
         <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
-        <a href="faculty.jsp" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
-        <a href="campus.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
-        <a href="deparment.jsp" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
-        <a href="programme.jsp" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
-         <a href="users.jsp" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
-        <a href="logout.jsp" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
+        <a href="/campus.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
+         <a href="/faculty.jsp" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
+        <a href="/deparment.jsp" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
+        <a href="/programme.jsp" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
+         <a href="/users.jsp" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
+        <a href="/changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="/logout.jsp" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
 
       </div>
     </div>
@@ -99,6 +99,7 @@
                   <input type="text" class="form-control" name="uname" placeholder="UniversityName" value="${university.uname}"required="this" />
               </div>
             </div>
+            
               <div class="form-group">
               <div class="col-sm-12">
                <select class="mdb-select md-form" name="organization">

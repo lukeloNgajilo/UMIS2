@@ -45,13 +45,13 @@
      
       <div class="list-group list-group-flush">
         <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
-        <a href="faculty.jsp" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
-        <a href="campus.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
-        <a href="deparment.jsp" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
-        <a href="programme.jsp" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
-         <a href="users.jsp" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
-        <a href="logout.jsp" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
+        <a href="/campus" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
+           <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
+        <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
+        <a href="/programme.jsp" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
+         <a href="/users.jsp" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
+        <a href="/changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="/logout.jsp" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
 
       </div>
     </div>
@@ -103,15 +103,11 @@
               <div class="col-sm-12">
                <select class="mdb-select md-form" name="organization">
                   
- <c:forEach items ="${organization}" var="organizations">
+ 			<c:forEach items ="${organization}" var="organizations">
               <option value="${organizations.id}">${organizations.name}</option>
             </c:forEach>
-        
-</select>
+				</select>
 
-
-            
-            
               </div>
             </div>
           
@@ -166,6 +162,10 @@
       </nav>
 
       <div class="container-fluid">  
+      
+      
+          
+      
        <%--   <table class="table table-hover table-fixed">
             <tr>
             	<th>university id</th> 
