@@ -75,7 +75,7 @@
   ADD
 </button>
 
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              <button type="button" class="btn btn-primary">
                   VIEW
               </button>
 <!-- Modal -->
@@ -113,7 +113,7 @@
       </div>
       <div class="form-group">
           <div class="col-sm-12">
-                  <input type="text" class="form-control" name="fname" placeholder="FacultyName" value="${faculty.fname}" required="this" />
+                  <input type="text" class="form-control" name="fname" placeholder="FacultyName" value="<%--${faculty.fname}--%>" required="this" />
               </div>
             </div>
 

@@ -74,8 +74,8 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   ADD
 </button>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                  VIEW</button>
+              <button type="button" class="btn btn-primary" >
+             <a href="/viewfaculty"></a>    VIEW</button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -90,7 +90,7 @@
   <form class="form-horizontal" role="form" action="/savefaculty">
       <div class="form-group">
           <div class="col-sm-12">
-              <select class="mdb-select md-form" name="campus">
+              <select class="mdb-select md-form" name="university">
 
                   <c:forEach items ="${university}" var="university">
                       <option value="${university.id}">${university.uname}</option>
@@ -142,8 +142,7 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-          <table class="table table-hover table-fixed">
+        <table class="table table-hover table-fixed">
               <tr>
 
                   <th>University name</th>
@@ -158,7 +157,7 @@
                   <tr>
                       <td>${faculty.getCampus().getUniversity().getUname()}</td>
                       <td>${faculty.getCampus().getCName()}</td>
-                      <td><%--${faculty.fname}--%></td>
+                      <td><%-- ${faculty.fname} --%></td>
 
                       <td><%--{faculty.Shortname}--%></td>
                       <td>${faculty.code}</td>

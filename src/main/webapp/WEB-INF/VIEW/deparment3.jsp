@@ -72,8 +72,8 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   ADD
 </button>
-              <button type="button" class="btn btn-primary">
-                  <a href="/editdeparment"> EDIT</a>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                   EDIT
               </button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -89,6 +89,7 @@
   <form class="form-horizontal" role="form" action="/savedeparment">
       <div class="form-group">
           <div class="col-sm-12">
+              <select class="mdb-select md-form" name="university">
       <c:forEach items ="${university}" var="university">
       <option value="${university.id}">${university.uname}</option>
       </c:forEach>
@@ -101,7 +102,7 @@
               <select class="mdb-select md-form" name="campus">
 
                   <c:forEach items ="${campus}" var="campus">
-                      <option value="${campus.id}">${campus.cname}</option>
+                      <option value="${campus.id}">${campus.CName}</option>
                   </c:forEach>
               </select>
           </div>
@@ -111,19 +112,19 @@
               <select class="mdb-select md-form" name="faculty">
 
                   <c:forEach items ="${faculty}" var="faculty">
-                      <option value="${faculty.id}">${faculty.fname}</option>
+                      <option value="${faculty.id}"><%--${faculty.fname}--%></option>
                   </c:forEach>
               </select>
           </div>
       </div>
       <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Dname" placeholder="DeparmentName" value="${deparment.Dname}"required="this" />
+                  <input type="text" class="form-control" name="Dname" placeholder="DeparmentName" value="${deparment.DName}"required="this" />
               </div>
             </div>
               <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Code" placeholder="Code" value="${deparment.Code}"required="this" />
+                  <input type="text" class="form-control" name="Code" placeholder="Code" value="${deparment.code}"required="this" />
               </div>
             </div>
           

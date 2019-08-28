@@ -44,7 +44,7 @@
           <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
         <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
           <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="/changepassword." class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="/changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
         <a href="/logout" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
 
       </div>
@@ -89,7 +89,7 @@
   <form class="form-horizontal" role="form" action="/savedeparment">
       <div class="form-group">
           <div class="col-sm-12">
-
+              <select class="mdb-select md-form" name="university">
       <c:forEach items ="${university}" var="university">
       <option value="${university.id}">${university.uname}</option>
       </c:forEach>
@@ -112,25 +112,25 @@
               <select class="mdb-select md-form" name="faculty">
 
                   <c:forEach items ="${faculty}" var="faculty">
-                      <option value="${faculty.id}">${faculty.fname}</option>
+                      <option value="${faculty.id}"><%--${faculty.fname}--%></option>
                   </c:forEach>
               </select>
           </div>
       </div>
       <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Dname" placeholder="DeparmentName" required="this" />
+                  <input type="text" class="form-control" name="DName" placeholder="DeparmentName" value="" required="this" />
               </div>
             </div>
               <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Code" placeholder="Code" required="this" />
+                  <input type="text" class="form-control" name="code" placeholder="Code" value="" required="this" />
               </div>
             </div>
           
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="HOD" placeholder="HeadOfDeparment" required="this" />
+                  <input type="text" class="form-control" name="HOD" placeholder="HeadOfDeparment" value="" required="this" />
               </div>
             </div>
 
@@ -149,33 +149,33 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>e>hear we come</p>
+
 <table class="table table-hover table-fixed">
 <tr>
 
     <th>University name</th>
     <th>Campus name</th>
-    <th>Faculty Name</th>
+    <th>Deparment Name</th>
     <th>Deparmentname</th>
     <th>Deparmentcode</th>
     <th>Headofdeparment</th>
+    <th></th>
 </tr>
 <c:forEach items ="${deparment}" var="deparment" >
     <tr>
     <td><%--${deparment.getFaculty().getCampus().getUniversity().getUname()}--%></td>
-    <td><%--<{deparmnet.faculty.com.qo.m.Campus.getCName()}--%></td>
-    <td><%--${deparment.Dname}--%></td>
-    <td><%--${deparment.Code--%></td>
-    <td> <%--${deparment.HOD}--%> </td>
-
-    <td>   <button  type="submit"  class="btn btn-primary">  <a href="/editdeparment?id=${deparment.id}">EDIT</a> </button> </td>
-    <td>   <button type="submit"  class="btn btn-primary"><a href="/deletedeparment?id=${deparment.id}">DELETE</a> </button> </td>
+    <td>${deparmnet.getCName()}</td>
+    <td>${deparment.DName}</td>
+    <td>${deparment.code}</td>
+    <td>${deparment.HOD}</td>
+    <td>  <button  type="submit"  class="btn btn-primary">  <a href="/editdeparment?id=${deparment.id}">EDIT</a> </button> </td>
+    <td>  <button type="submit"  class="btn btn-primary"><a href="/deletedeparment?id=${deparment.id}">DELETE</a> </button> </td>
 </tr>
 
-
+    </c:forEach>
+    </table>
       </div>
-    </div>
+
     <!-- /#page-content-wrapper -->
 
   </div>

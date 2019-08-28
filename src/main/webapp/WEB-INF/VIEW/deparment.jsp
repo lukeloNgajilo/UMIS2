@@ -39,8 +39,8 @@
      
       <div class="list-group list-group-flush">
         <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
-        <a href="/campus." class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
-          <a href="/faculty." class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
+        <a href="/campus" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
+          <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
           <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
         <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
           <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
@@ -72,8 +72,8 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   ADD
 </button>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                  <a href=""> VIEW</a>
+              <button type="button" class="btn btn-primary" >
+                  <a href="/viewdeparment"> VIEW</a>
               </button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,7 +112,7 @@
               <select class="mdb-select md-form" name="faculty">
 
                   <c:forEach items ="${faculty}" var="faculty">
-                      <option value="${faculty.id}">${faculty.fname}</option>
+                      <option value="${faculty.id}"><%--${faculty.fname}--%></option>
                   </c:forEach>
               </select>
           </div>

@@ -52,16 +52,18 @@ public String viewdeparment(ModelMap modelmap)
      List<University>university=universityService.getalluniversity();
      List<Campus>campus=campusService.getallCampus();
      List<Faculty>faculty=facultyservice.getallFaculty();
+     List<Deparment>deparment=deparmentservice.getalldeparment();
      modelmap.addAttribute("university",university);
      modelmap.addAttribute("faculty",faculty);
      modelmap.addAttribute("university",university);
      modelmap.addAttribute("campus",campus);
-
-
+     modelmap.addAttribute("deparment",deparment);
 
      return"deparment2";
  }
-@RequestMapping("/savedeparment")
+
+ 
+ @RequestMapping("/savedeparment")
  public String savedeparment(@ModelAttribute("deparment")Deparment deparment, ModelMap model, @RequestParam("campus") String c,@RequestParam("university") String b,@RequestParam("faculty")String a,Faculty faculty,Campus campus) {
     int z = Integer.parseInt(c);
     int y = Integer.parseInt(b);
@@ -77,9 +79,9 @@ public String viewdeparment(ModelMap modelmap)
 }
 
 @RequestMapping("/editdeparment")
-    public String editdeparment(ModelMap modelmap,@RequestParam("deparment")int x)
+    public String editdeparment(ModelMap modelmap,@RequestParam("id")int x)
     {
-        deparmentservice.getdeparmentbyid(x);
+       Deparment deparment= deparmentservice.getdeparmentbyid(x);
         List<University>university=universityService.getalluniversity();
         List<Campus>campus=campusService.getallCampus();
         List<Faculty>faculty=facultyservice.getallFaculty();
@@ -87,16 +89,16 @@ public String viewdeparment(ModelMap modelmap)
         modelmap.addAttribute("faculty",faculty);
         modelmap.addAttribute("university",university);
         modelmap.addAttribute("campus",campus);
-
+       modelmap.addAttribute("deparment",deparment);
 
 
         return"deparment3";
     }
 
   @RequestMapping("/deletedeparment")
-    public String deletedeparment(@RequestParam("id")int x ,ModelMap modelmap)
+    public String deletedeparment(@RequestParam("id")int z ,ModelMap modelmap)
   {
-      Deparment deparment =deparmentservice.getdeparmentbyid(x);
+      Deparment deparment =deparmentservice.getdeparmentbyid(z);
       deparmentservice.savedeparment(deparment);
 
       return"redirect:/viewdeparment";

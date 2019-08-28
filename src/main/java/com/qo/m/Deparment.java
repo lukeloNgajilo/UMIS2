@@ -11,7 +11,7 @@ import java.util.List;
 public class Deparment {
 
 
-	public void setFaculty(com.qo.m.Faculty faculty) {
+	public void setFaculty(Faculty faculty) {
 		this.faculty = faculty;
 	}
 
@@ -19,11 +19,19 @@ public class Deparment {
 	@JoinColumn(name="Faculty_id",nullable=false,insertable = false, updatable =false)
 	private Faculty faculty;
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-   @Column(name="DeparmentName",nullable=false)
+   @Column(name="DeparmentName")
 	private String DName;
 
    	@Column(nullable=false)
