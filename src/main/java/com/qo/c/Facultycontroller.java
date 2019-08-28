@@ -34,27 +34,28 @@ public class Facultycontroller {
         public String AddFaculty(ModelMap modelmap)
 {
     List<Campus>campus=Campusservice.getallCampus();
-    List<University>university=universityService.getalluniversity();
+  List<University>university=universityService.getalluniversity();
+  modelmap.addAttribute("university",university);
     modelmap.addAttribute("campus",campus);
    return "faculty";
 
 }
 
 
-        @RequestMapping("///")
+        @RequestMapping("/viewfaculty")
         public String viewFaculty(ModelMap modelmap)
 {  List<University>university=universityService.getalluniversity();
-    List<Organization> organization=organizationservice.getallOrganization();
+
     List<Faculty>faculty=facultyservice.getallFaculty();
     List<Campus>campus=Campusservice.getallCampus();
     modelmap.addAttribute("campus",campus);
     modelmap.addAttribute("faculty",faculty);
     modelmap.addAttribute("university",university);
-    modelmap.addAttribute("organization",organization);
-   return "";
+
+   return "faculty2";
 }
 
-    @RequestMapping("/")
+    @RequestMapping("/editfaculty")
     public String editFaculty(@RequestParam("id")int b, ModelMap modelMap)
 {
      facultyservice.getfacultybyid(b);
@@ -65,26 +66,33 @@ public class Facultycontroller {
       modelMap.addAttribute("faculty",faculty);
       modelMap.addAttribute("campus",campus);
       modelMap.addAttribute("university",university);
-        return "";
+
+
+        return "faculty3";
 }
 
-    @RequestMapping("/wew")
+    @RequestMapping("/deletefaculty")
     public String deleteFaculty(@RequestParam("id")int a)
 {
           Faculty faculty=facultyservice.getfacultybyid(a);
                      facultyservice.deletefaculty(faculty);
 
 
-    return  "";
+    return  "redirect:/viewfaculty";
 }
-        @RequestMapping("/q")
-        public String saveFaculty(@ModelAttribute("faculty")Faculty faculty,@RequestParam("Campus")String c)
+        @RequestMapping("/savefaculty")
+        public String saveFaculty(@ModelAttribute("faculty")Faculty faculty,@RequestParam("campus")String c,@RequestParam("university")String v ,Campus campus)
         {
             int a=Integer.parseInt(c);
+            int b=Integer.parseInt(v);
+
+            campus.setUniversityid(b);
             faculty.setIcd(a);
             facultyservice.savefaculty(faculty);
+            Campusservice.savecampus(campus);
 
-            return"jjj";
+
+            return"redirect:/viewfaculty";
         }
 
 

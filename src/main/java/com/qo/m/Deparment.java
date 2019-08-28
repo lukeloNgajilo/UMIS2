@@ -11,6 +11,10 @@ import java.util.List;
 public class Deparment {
 
 
+	public void setFaculty(com.qo.m.Faculty faculty) {
+		this.faculty = faculty;
+	}
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="Faculty_id",nullable=false,insertable = false, updatable =false)
 	private Faculty faculty;

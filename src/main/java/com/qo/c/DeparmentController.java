@@ -1,0 +1,110 @@
+package com.qo.c;
+
+
+import com.qo.m.Campus;
+import com.qo.m.Deparment;
+import com.qo.m.Faculty;
+import com.qo.m.University;
+import com.qo.s.CampusService;
+import com.qo.s.DeparmentService;
+import com.qo.s.Facultyservice;
+import com.qo.s.UniversityService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
+
+@Controller
+public class DeparmentController {
+
+
+@Autowired
+    UniversityService universityService;
+
+@Autowired
+    CampusService campusService;
+
+@Autowired
+    Facultyservice facultyservice;
+
+@Autowired
+    DeparmentService deparmentservice;
+@RequestMapping("/deparment")
+public String adddeparment(ModelMap modelmap )
+{
+    List<University>university=universityService.getalluniversity();
+    List<Campus>campus=campusService.getallCampus();
+    List<Faculty>faculty=facultyservice.getallFaculty();
+    modelmap.addAttribute("university",university);
+    modelmap.addAttribute("faculty",faculty);
+    modelmap.addAttribute("campus",campus);
+    modelmap.addAttribute("university",university);
+    return "deparment";
+}
+ @RequestMapping("/viewdeparment")
+public String viewdeparment(ModelMap modelmap)
+ {
+     List<University>university=universityService.getalluniversity();
+     List<Campus>campus=campusService.getallCampus();
+     List<Faculty>faculty=facultyservice.getallFaculty();
+     modelmap.addAttribute("university",university);
+     modelmap.addAttribute("faculty",faculty);
+     modelmap.addAttribute("university",university);
+     modelmap.addAttribute("campus",campus);
+
+
+
+     return"deparment2";
+ }
+@RequestMapping("/savedeparment")
+ public String savedeparment(@ModelAttribute("deparment")Deparment deparment, ModelMap model, @RequestParam("campus") String c,@RequestParam("university") String b,@RequestParam("faculty")String a,Faculty faculty,Campus campus) {
+    int z = Integer.parseInt(c);
+    int y = Integer.parseInt(b);
+    int v = Integer.parseInt(a);
+
+    deparment.setFaculty_id(v);
+    faculty.setIcd(z);
+    campus.setUniversityid(y);
+    deparmentservice.savedeparment(deparment);
+
+    return "redirect:/viewdeparment";
+
+}
+
+@RequestMapping("/editdeparment")
+    public String editdeparment(ModelMap modelmap,@RequestParam("deparment")int x)
+    {
+        deparmentservice.getdeparmentbyid(x);
+        List<University>university=universityService.getalluniversity();
+        List<Campus>campus=campusService.getallCampus();
+        List<Faculty>faculty=facultyservice.getallFaculty();
+        modelmap.addAttribute("university",university);
+        modelmap.addAttribute("faculty",faculty);
+        modelmap.addAttribute("university",university);
+        modelmap.addAttribute("campus",campus);
+
+
+
+        return"deparment3";
+    }
+
+  @RequestMapping("/deletedeparment")
+    public String deletedeparment(@RequestParam("id")int x ,ModelMap modelmap)
+  {
+      Deparment deparment =deparmentservice.getdeparmentbyid(x);
+      deparmentservice.savedeparment(deparment);
+
+      return"redirect:/viewdeparment";
+  }
+
+
+
+}
+
+
+

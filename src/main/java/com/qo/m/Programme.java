@@ -4,9 +4,6 @@ import javax.persistence.*;
 
 @Entity
 public class Programme {
-
-
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
@@ -29,6 +26,16 @@ public class Programme {
 	@Column(name="Faculty")
 	private String Faculty;
 
+	public int getDeparmentid() {
+		return deparmentid;
+	}
+
+	public void setDeparmentid(int deparmentid) {
+		this.deparmentid = deparmentid;
+	}
+
+	private int deparmentid;
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="Deparment_id")
 	private Deparment deparment;
@@ -36,6 +43,13 @@ public class Programme {
 
 
 
+	public Deparment getDeparment() {
+		return deparment;
+	}
+
+	public void setDeparment(Deparment deparment) {
+		this.deparment = deparment;
+	}
 
 	public String getCode() {
 		return code;

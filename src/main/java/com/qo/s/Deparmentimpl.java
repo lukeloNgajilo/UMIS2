@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.qo.m.Deparment;
 import com.qo.respo.DeparmentRespo;
+import org.springframework.stereotype.Component;
 
 
-
-
+@Component
 public class Deparmentimpl implements DeparmentService {
 
 @Autowired	

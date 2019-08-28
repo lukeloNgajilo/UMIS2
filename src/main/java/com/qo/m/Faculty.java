@@ -6,30 +6,27 @@ import java.util.List;
 import javax.persistence.*;
 @Entity
 public class Faculty {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 
-	@Column(name="FacultyName",nullable=false)
-	private String FName;
+	@Column(name="FacultyName")
+	private String fname;
 	
     @Column(name="FacultyCode",nullable=false)
 	private String Code;
 	
-    @Column(name="Shortname",nullable=false)
-	private String ShortName;
-	
-    @Column(name="location",nullable=false)
-    private String locaion;
-
+    @Column(name="Shortname")
+	private String Shortname;
 
 	public String getShortName() {
-		return ShortName;
+		return Shortname;
 	}
 
 	public void setShortName(String shortName) {
-		ShortName = shortName;
+		Shortname = shortName;
 	}
 
 
@@ -45,44 +42,54 @@ public class Faculty {
 	}
 
 
-	
-   @JoinColumn(name = "Campus_id",nullable=false,insertable = false, updatable =false)
+	public Campus getCampus() {
+		return Campus;
+	}
+
+	public void setCampus(Campus campus) {
+		Campus = campus;
+	}
+
+	@JoinColumn(name = "Campus_id",nullable=false,insertable = false, updatable =false)
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Campus Campus;
     
     
     
     public String getFName() {
-		return FName;
+		return fname;
 	}
 	public String getCode() {
 		return Code;
 	}
 	public String getSName() {
-		return ShortName;
+		return Shortname;
 	}
-	public String getLocaion() {
-		return locaion;
-	}
+
 	
 	
 	public void setFName(String fName) {
-		FName = fName;
+		fname = fName;
 	}
 	public void setCode(String code) {
 		Code = code;
 	}
 	public void setSName(String sName) {
-		ShortName = sName;
+		Shortname = sName;
 	}
-	public void setLocaion(String locaion) {
-		this.locaion = locaion;
+
+	public int getId() {
+		return id;
 	}
-	
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
-		return "Faculty [FName=" + FName + ", Code=" + Code + ", SName=" + ShortName + ", locaion=" + locaion + ", Scampus="
-				+ ", SFaculty=" + "]";
+		return "Faculty [Fname=" + fname + ", Code=" + Code + ", SName=" + Shortname +
+				 "]";
 	}
 
 }

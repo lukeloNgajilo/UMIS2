@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@page  isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,14 +42,14 @@
     <div class="bg-secondary  border-right" id="sidebar-wrapper">
       
       <div class="list-group list-group-flush">
-        <a href="university.jsp" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
-        <a href="faculty.jsp" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
-        <a href="campus.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
-        <a href="deparment.jsp" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
-        <a href="programme.jsp" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
-          <a href="users.jsp" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
-        <a href="logout.jsp" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
+        <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
+        <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
+        <a href="/campus." class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
+        <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
+        <a href="/programme." class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
+          <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
+        <a href="/changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="/logout" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
 
       </div>
     </div>
@@ -74,6 +76,8 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   ADD
 </button>
+              <button type="button" class="btn btn-primary" ><a href="/viewfaculty">VIEW</a>
+              </button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -86,7 +90,37 @@
         </button>
       </div>
       <div class="modal-body bg-secondary ">
-  <form class="form-horizontal" role="form" action="">
+          <div class="form-group">
+              <div class="col-sm-12">
+                  <select class="mdb-select md-form" name="university">
+                      <c:forEach items ="${university}" var="university">
+                          <option value="${university.id}">${university.uname}</option>
+                      </c:forEach>
+                  </select>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <div class="col-sm-12">
+                  <select class="mdb-select md-form" name="campus">
+
+                      <c:forEach items ="${campus}" var="campus">
+                          <option value="${campus.id}">${campus.cname}</option>
+                      </c:forEach>
+                  </select>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="col-sm-12">
+                  <select class="mdb-select md-form" name="faculty">
+
+                      <c:forEach items ="${faculty}" var="faculty">
+                          <option value="${faculty.id}">${faculty.fname}</option>
+                      </c:forEach>
+                  </select>
+              </div>
+          </div>
+  <form class="form-horizontal" role="form" action="/saveprogramme">
       <div class="form-group">
 
               <div class="col-sm-12">
@@ -143,8 +177,31 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>e>hear we come</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->

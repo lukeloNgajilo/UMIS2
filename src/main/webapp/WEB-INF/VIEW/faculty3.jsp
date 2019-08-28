@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
-    <%@page  isELIgnored="false" %> 
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@page  isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,8 +23,8 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-dark bg-dark">
+  
+<nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand ">UMIS</a>
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -37,17 +37,17 @@
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="bg-secondary border-right" id="sidebar-wrapper">
+    <div class= "bg-secondary border-right" id="sidebar-wrapper">
       
       <div class="list-group list-group-flush">
         <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
-        <a href="/campus" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
+          <a href="/campus" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
           <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
-        <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
-        <a href="programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
-        <a href="users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
-        <a href="logout.jsp" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
+          <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
+        <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
+          <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
+        <a href="/changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="/logout" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
 
       </div>
     </div>
@@ -56,7 +56,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-secondary border-bottom bg-secondary">
+      <nav class="navbar navbar-expand-lg navbar-light bg-secondary border-bottom">
         <button class="btn btn-primary" id="menu-toggle">Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,69 +72,62 @@
            
            <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  EDIT
+  ADD
 </button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
- <a href="/viewcampus">VIEW</a> 
-</button>
+
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  VIEW
+              </button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header bg-secondary ">
-        <h5 class="modal-title" id="exampleModalLabel">CAMPUS DETAILS</h5>
+      <div class="modal-header bg-secondary">
+        <h5 class="modal-title " id="exampleModalLabel"> FACULTY DETAILS</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body bg-secondary ">
-  <form class="form-horizontal" role="form" action="/savecampus" method="post">
-  
+      <div class="modal-body bg-secondary">
+  <form class="form-horizontal" role="form" action="/savefaculty">
       <div class="form-group">
-              <div class="col-sm-12">
-           <select class="mdb-select md-form" name="university">
-                  
-			 <c:forEach items ="${university}" var="university">
-              <option value="${university.id}">${university.uname}</option>
-            </c:forEach>
-             </select>   
-              </div>
-              </div>
-               <div class="form-group">
           <div class="col-sm-12">
-              <input type="text" class="form-control" name="CName" placeholder="CampusName" value=" <%--${campus.CName}--%> "required="this" />
-          </div>
+              <select class="mdb-select md-form" name="university">
 
+                  <c:forEach items ="${university}" var="university">
+                      <option value="${university.id}">${university.uname}</option>
+                  </c:forEach>
+              </select>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <div class="col-sm-12">
+              <select class="mdb-select md-form" name="campus">
+
+                  <c:forEach items ="${campus}" var="campus">
+                      <option value="${campus.id}">${campus.CName}</option>
+                  </c:forEach>
+              </select>
+          </div>
+      </div>
+      <div class="form-group">
+          <div class="col-sm-12">
+                  <input type="text" class="form-control" name="fname" placeholder="FacultyName" value="${faculty.fname}" required="this" />
+              </div>
             </div>
+
               <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="location" placeholder="location" value="<%-- ${campus.location} --%>" required="this" />
+                  <input type="text" class="form-control" name="code" placeholder="code" value="${faculty.code}" required="this" />
               </div>
             </div>
           
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="region" placeholder="Region" value="<%-- ${campus.region}" --%> required="this" />
+                  <input type="text" class="form-control" name="ShortName" placeholder="Shortname" value="${faculty.Shortname}" required="this" />
               </div>
             </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Contacts" placeholder="Contacts" value="<%-- ${campus.Contacts} --%>" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="website" placeholder="Website" value="<%-- ${campus.website} --%>" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Shortname" placeholder="ShortName" value="<%-- ${campus.Shortname} --%>" required= "this" />
-              </div>
-            </div>
-             
-          
-      </div>
       <div class="modal-footer bg-secondary ">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save changes</button>
@@ -150,25 +143,8 @@
       </nav>
 
       <div class="container-fluid">
-      
-            
-               
-           
-      
- 
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
+        <h1 class="mt-4">Simple Sidebar</h1>
+        <p>e>hear we come</p>
       </div>
     </div>
     <!-- /#page-content-wrapper -->

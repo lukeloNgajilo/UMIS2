@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@page  isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +37,7 @@
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class= bg-secondary border-right" id="sidebar-wrapper">
+    <div class= "bg-secondary border-right" id="sidebar-wrapper">
       
       <div class="list-group list-group-flush">
         <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
@@ -73,6 +75,10 @@
   ADD
 </button>
 
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                 <a href="/viewfaculty">VIEW</a>
+              </button>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -84,13 +90,34 @@
         </button>
       </div>
       <div class="modal-body bg-secondary">
-  <form class="form-horizontal" role="form" action="">
+  <form class="form-horizontal" role="form" action="/savefaculty">
       <div class="form-group">
+          <div class="col-sm-12">
+              <select class="mdb-select md-form" name="university">
 
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Fname" placeholder="FacultyName" required="this" />
+                  <c:forEach items ="${university}" var="university">
+                      <option value="${university.id}">${university.uname}</option>
+                  </c:forEach>
+              </select>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <div class="col-sm-12">
+              <select class="mdb-select md-form" name="campus">
+
+                  <c:forEach items ="${campus}" var="campus">
+                      <option value="${campus.id}">${campus.CName}</option>
+                  </c:forEach>
+              </select>
+          </div>
+      </div>
+      <div class="form-group">
+          <div class="col-sm-12">
+                  <input type="text" class="form-control" name="fname" placeholder="FacultyName" required="this" />
               </div>
             </div>
+
               <div class="form-group">
               <div class="col-sm-12">
                   <input type="text" class="form-control" name="code" placeholder="code" required="this" />
@@ -99,27 +126,9 @@
           
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="ShortName" placeholder="ShortName" required="this" />
+                  <input type="text" class="form-control" name="Shortname" placeholder="ShortName" required="this" />
               </div>
             </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="location" placeholder="location" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="SCapmus" placeholder="SCampus" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="SFaculty" placeholder="SFaculty" required="this" />
-              </div>
-            
-            
-
-      </div>
       <div class="modal-footer bg-secondary ">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save changes</button>

@@ -30,7 +30,12 @@ public class Programmeimpl implements Programmeservice {
             programmerespo.delete(programme);
 	}
 
-	@Override
+    @Override
+    public Programme getprogrammebyid(int id) {
+        return programmerespo.getOne(id);
+    }
+
+    @Override
 	public List<Programme> getallprogramme() {
 		// TODO Auto-generated method stub
 		return programmerespo.findAll();

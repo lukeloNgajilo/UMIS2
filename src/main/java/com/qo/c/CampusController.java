@@ -67,7 +67,6 @@ public class CampusController {
 	   public String editcampuses(ModelMap modelMap,@RequestParam("id")int b)
 	   {
          campusService.getCampusById(b);
-
 	   	List<University>university=universityService.getalluniversity();
 	   	List<Campus>campus=campusService.getallCampus();
 	   	modelMap.addAttribute("university",university);

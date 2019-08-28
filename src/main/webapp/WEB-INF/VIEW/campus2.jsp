@@ -102,7 +102,7 @@
               </div>
                <div class="form-group">
           <div class="col-sm-12">
-              <input type="text" class="form-control" name="cname" placeholder="CampusName" required="this" />
+              <input type="text" class="form-control" name="CName" placeholder="CampusName" required="this" />
           </div>
 
             </div>
@@ -167,7 +167,7 @@
     <c:forEach items ="${campus}" var="campus" >
              <tr>
                 <td>${campus.getUniversity().getUname()}</td>   
-                <td>${campus.cname}</td>
+                <td>${campus.CName}</td>
                 
                  <td>${campus.location}</td>  
                   <td>${campus.region}</td>
@@ -175,7 +175,7 @@
                  <td><%-- <%-- ${campus.Shortname} --%> </td>
                
             <td>   <button  type="submit"  class="btn btn-primary">  <a href="/editcampus?id=${campus.id}">EDIT</a> </button> </td>
-             <td>   <button type="submit"  class="btn btn-primary"><%-- <a href="/deleteuniversity?id=${university.id}">DELETE</a> --%></button> </td>
+             <td>   <button type="submit"  class="btn btn-primary"><a href="/deleteuniversity?id=${campus.id}">DELETE</a> </button> </td>
              </tr>
  -           
                  </c:forEach>

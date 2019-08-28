@@ -14,6 +14,7 @@ public interface Programmeservice {
 	Programme updateprogramme(Programme programme);
 	
 	void deleteprogramme(Programme programme);
-	
+
+	Programme getprogrammebyid(int id);
 	List<Programme> getallprogramme();
 }
