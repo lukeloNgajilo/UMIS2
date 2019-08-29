@@ -15,10 +15,10 @@
   <title>UMIS</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../../resources/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../../resources/static/css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet">
 
 </head>
 
@@ -43,12 +43,12 @@
       
       <div class="list-group list-group-flush">
         <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
-        <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
         <a href="/campus." class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
+          <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
         <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
-        <a href="/programme." class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
+        <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
           <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="/changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="/changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
         <a href="/logout" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
 
       </div>
@@ -76,7 +76,7 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   ADD
 </button>
-              <button type="button" class="btn btn-primary" ><a href="/viewfaculty">VIEW</a>
+              <button type="button" class="btn btn-primary" ><a href="/programme">VIEW</a>
               </button>
 
 <!-- Modal -->
@@ -90,6 +90,7 @@
         </button>
       </div>
       <div class="modal-body bg-secondary ">
+      <form class="form-horizontal" role="form" action="saveprogramme" method="post">
           <div class="form-group">
               <div class="col-sm-12">
                   <select class="mdb-select md-form" name="university">
@@ -103,44 +104,41 @@
           <div class="form-group">
               <div class="col-sm-12">
                   <select class="mdb-select md-form" name="campus">
-
                       <c:forEach items ="${campus}" var="campus">
-                          <option value="${campus.id}">${campus.cname}</option>
+                          <option value="${campus.id}">${campus.CName}</option>
                       </c:forEach>
                   </select>
               </div>
+          </div>
+          
+          <div class="form-group">
+              <div class="col-sm-12">
+                  <select class="mdb-select md-form" name="deparment">
+                      <c:forEach items ="${deparment}" var="deparment">
+                          <option value="${deparment.id}">${deparment.DName}</option>
+                      </c:forEach>
+                  </select>
+              </div>
+          
           </div>
           <div class="form-group">
               <div class="col-sm-12">
                   <select class="mdb-select md-form" name="faculty">
-
                       <c:forEach items ="${faculty}" var="faculty">
-                          <option value="${faculty.id}">${faculty.fname}</option>
+                          <option value="${faculty.id}"><%--${faculty.fname}--%></option>
                       </c:forEach>
                   </select>
               </div>
+          
           </div>
-  <form class="form-horizontal" role="form" action="/saveprogramme">
       <div class="form-group">
-
-              <div class="col-sm-12">
+             <div class="col-sm-12">
                   <input type="text" class="form-control" name="name" placeholder="ProgrammeName" required="this" />
               </div>
             </div>
               <div class="form-group">
               <div class="col-sm-12">
                   <input type="text" class="form-control" name="Otype" placeholder="ProgrammeType" required="this" />
-              </div>
-            </div>
-          
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="code" placeholder="Location" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Campus" placeholder="Campus" required="this" />
               </div>
             </div>
             <div class="form-group">
@@ -179,6 +177,37 @@
       <div class="container-fluid">
 
 
+          <table class="table table-hover table-fixed">
+              <tr>
+
+                  <th>University name</th>
+                  <th>Campus name</th>
+                  <th>Deparment Name</th>
+                  <th>faculty name</th>
+                  <th>programme name</th>
+                  <th>ProgrammeType</th>
+                  <th>Shortname</th>
+                  <th>Faculty</th>
+                  <th>Time interval</th>
+              </tr>
+              <c:forEach items ="${deparment}" var="deparment" >
+                  <tr>
+                      <td><%--${deparment.getFaculty().getCampus().getUniversity().getUname()}--%></td>
+                      <td>${deparmnet.getCName()}</td>
+                      <td>${deparment.DName}</td>
+                      <td><%--${faculty.fname}--%></td>
+                      <td><%--${programme.name}--%></td>
+                      <td><%--${programme.Otype}--%></td>
+                      <td><%--${programme.ShortName}--%></td>
+                      <td><%--${programme.Faculty}--%></td>
+                      <td><%--${programme.Year}--%></td>
+                      <td></td>
+                      <td>  <button  type="submit"  class="btn btn-primary">  <a href="<%--/editprogramme?id=${programme.id}--%>">EDIT</a> </button> </td>
+                      <td>  <button type="submit"  class="btn btn-primary"><a href="<%--/deleteprogramme?id=${programme.id}--%>">DELETE</a> </button> </td>
+                  </tr>
+
+              </c:forEach>
+          </table>
 
 
 
@@ -210,8 +239,8 @@
   <!-- /#wrapper -->
 
   <!-- Bootstrap core JavaScript -->
-  <script src="../../resources/static/vendor/jquery/jquery.min.js"></script>
-  <script src="../../resources/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Menu Toggle Script -->
   <script>

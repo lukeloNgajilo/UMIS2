@@ -48,10 +48,10 @@
         <a href="/campus" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
            <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
         <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
-        <a href="/programme.jsp" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
-         <a href="/users.jsp" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="/changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
-        <a href="/logout.jsp" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
+        <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
+         <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
+        <a href="/changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="/logout" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
 
       </div>
     </div>

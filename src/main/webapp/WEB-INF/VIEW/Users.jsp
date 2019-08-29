@@ -37,14 +37,14 @@
     <div class="bg-secondary border-right" id="sidebar-wrapper">
       
       <div class="list-group list-group-flush">
-        <a href="university.jsp" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
-        <a href="faculty.jsp" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
-        <a href="campus.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
-        <a href="deparment.jsp" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
-        <a href="programme.jsp" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
-         <a href="users.jsp" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
-        <a href="logout.jsp" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
+        <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
+        <a href="/campus" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
+          <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
+        <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
+        <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
+         <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
+        <a href="/changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="/logout" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -62,7 +62,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">User<span class="sr-only">(current)</span></a>
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        lukelo
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">profile</a>
+                        <a class="dropdown-item" href="#">changepassword</a>
+                        <a class="dropdown-item" href="#">logout</a>
+                    </div>
+                </div>
             </li>
           
            
@@ -82,7 +92,7 @@
         </button>
       </div>
       <div class="modal-body">
-  <form class="form-horizontal" role="form" action="saveuser" method="post">
+  <form class="form-horizontal" role="form" action="/saveuser" method="post">
       <div class="form-group">
 
               <div class="col-sm-12">

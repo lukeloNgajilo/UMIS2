@@ -26,18 +26,21 @@ public class Programme {
 	@Column(name="Faculty")
 	private String Faculty;
 
+	@Column()
+	private int deparment_id;
+
 	public int getDeparmentid() {
-		return deparmentid;
+		return deparment_id;
 	}
 
 	public void setDeparmentid(int deparmentid) {
-		this.deparmentid = deparmentid;
+		this.deparment_id = deparmentid;
 	}
 
-	private int deparmentid;
+
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="Deparment_id")
+	@JoinColumn(name="Deparment_id",nullable=false,insertable = false, updatable =false)
 	private Deparment deparment;
 
 

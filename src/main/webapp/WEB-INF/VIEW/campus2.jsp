@@ -175,7 +175,7 @@
                  <td><%-- <%-- ${campus.Shortname} --%> </td>
                
             <td>   <button  type="submit"  class="btn btn-primary">  <a href="/editcampus?id=${campus.id}">EDIT</a> </button> </td>
-             <td>   <button type="submit"  class="btn btn-primary"><a href="/deleteuniversity?id=${campus.id}">DELETE</a> </button> </td>
+             <td>   <button type="submit"  class="btn btn-primary"><a href="/deletecampus?id=${campus.id}">DELETE</a> </button> </td>
              </tr>
  -           
                  </c:forEach>

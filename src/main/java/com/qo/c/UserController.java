@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.qo.m.Users;
 import com.qo.s.UserService;
 
+import java.util.List;
 
 
 @Controller
@@ -24,8 +25,8 @@ public class UserController {
 	 UserService userservice;
 	
     
-	@RequestMapping("/user")
-	public String user()
+	@RequestMapping("/users")
+	public String adduser()
 	{
 		
 		return"Users";
@@ -37,11 +38,28 @@ public class UserController {
  public String saveUser(@ModelAttribute("user")Users user,ModelMap modelMap) {
 	
 	Users usersaved=userservice.saveuser(user);
-	String msg="users is"+usersaved.getName();
-	modelMap.addAttribute("msg",msg);
+
 	 
-	return"Users";
+	return"redirect:viewuser";
 	}
 	
+  @RequestMapping("/viewuser")
+	public String viewusers() {
+	  List<Users> user = userservice.getallusers();
+
+
+	  return "Users3";
+  }
+
+  @RequestMapping("/")
+	public String deleteusers()
+	{
+
+
+		return "";
+	}
+
+
+
 
 }

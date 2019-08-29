@@ -3,6 +3,7 @@ package com.qo.c;
 import com.qo.m.*;
 import com.qo.s.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 
-@RestController
+@Controller
 public class ProgrammerController {
 
 	@Autowired
@@ -82,7 +83,7 @@ public class ProgrammerController {
 
 
 
-		return "redirect:/viewprogramme";
+		return "programme3";
 	}
 
 	@RequestMapping("/deleteprogramme")
@@ -95,8 +96,24 @@ public class ProgrammerController {
   	return "redirect:/viewprogramme";
   }
 		
+	@RequestMapping("/viewprogramme")
+	public  String viewProgramme(ModelMap modelmap)
+	{
+		List<Programme>programme=programmeservice.getallprogramme();
+		List<University> university=universityService.getalluniversity();
+		List<Campus>campus=campusService.getallCampus();
+		List<Faculty>faculty=facultyservice.getallFaculty();
+		List<Deparment>deparment=deparmentService.getalldeparment();
+		modelmap.addAttribute("university",university);
+		modelmap.addAttribute("faculty",faculty);
+		modelmap.addAttribute("campus",campus);
+		modelmap.addAttribute("university",university);
+		modelmap.addAttribute("deparment",deparment);
+        modelmap.addAttribute("programme",programme);
 
-	
+
+		return "programme2";
+	}
 	
 	
 	
