@@ -2,20 +2,27 @@ package com.qo.c;
 
 import com.qo.m.Organization;
 import com.qo.s.OrganizationService;
+import org.apache.commons.lang3.*;
+
+import org.apache.commons.lang3.math.NumberUtils;
+import org.hibernate.loader.custom.Return;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
 
+/*import org.springframework.util.StringUtils;*/
+import org.springframework.web.bind.annotation.*;
+/*import org.apache.commons.lang3.StringUtils;*/
 import com.qo.m.University;
 import com.qo.respo.OrganizationRespo;
 import com.qo.respo.UniversityRespo;
 import com.qo.s.UniversityService;
 
-
+import java.lang.Object;
 import javax.persistence.GeneratedValue;
 import java.util.List;
-
+import java.lang.*;
+import java.util.regex.Pattern;
 
 @Controller
 public class UniversityController {
@@ -30,24 +37,34 @@ public class UniversityController {
 
 	
 	@RequestMapping("/university")
-	public String adduniversity(ModelMap modelmap,Organization organizato,University university)
+	public String indexuniversity()
 	{
-    //               university.getOrganization();
-		 ///modelmap.addAttribute("aaaa", university.getId() );
-		 
-		   //get
-		
-	      //  System.out.print(universit.getOrganization().getId());
-	       // modelmap.addAttribute("universit",universit.getOrganization().getId());
-		  List<Organization> organization=organizationservice.getallOrganization();
-		  modelmap.addAttribute("organization",organization);
-		  
-		  
-		  
-		 
+
+
+
 		return"university";
 	}
-	
+
+
+	@RequestMapping("/adduniversity")
+	public String adduniversity(ModelMap modelmap,Organization organizato,University university)
+	{
+
+		List<Organization> organization=organizationservice.getallOrganization();
+		modelmap.addAttribute("organization",organization);
+
+
+
+
+		return"universitya";
+	}
+
+
+
+
+
+
+
 	 @RequestMapping("/viewuniversity")
 		public String viewdetails(ModelMap modelmap)
 		{
@@ -60,9 +77,114 @@ public class UniversityController {
 			
 		}
 
+
+
+
+
+	public boolean stringContainsNumber( String s )
+	{
+		return Pattern.compile( "[0-9]" ).matcher( s ).find();
+	}
+
+
+
+
+
 	@RequestMapping("/saveuniversity")
  public String saveuniversity(@ModelAttribute("university")University university, @RequestParam("organization")String c,ModelMap modelmap) {
-		int a=Integer.parseInt(c);	  
+
+
+
+		String oa=university.getUname();
+		String z=university.getCampus();
+		String q=university.getContacts();
+		String m=university.getWebsite();
+		String ar=university.getLocation();
+		int wq=university.getNcampus();
+
+       String zzz=String.valueOf(wq);
+
+		boolean QW =stringContainsNumber(oa);
+		boolean az=stringContainsNumber(z);
+		boolean qe=stringContainsNumber(m);
+		boolean ap=stringContainsNumber(ar);
+		boolean zx=stringContainsNumber(zzz);
+
+		if(QW) {
+			String b = "Enter a valid input";
+			modelmap.addAttribute("a", b);
+
+			List<Organization> organization = organizationservice.getallOrganization();
+			modelmap.addAttribute("organization", organization);
+
+			return"universitya";
+		}
+
+
+
+
+
+
+       else if(az)
+		{
+			String b = "Enter a valid input";
+			modelmap.addAttribute("b", b);
+
+			List<Organization> organization = organizationservice.getallOrganization();
+			modelmap.addAttribute("organization", organization);
+
+
+			return"universitya";
+		}
+       else if(qe)
+		{
+			String b = "Enter a valid input ";
+			modelmap.addAttribute("w", b);
+
+			List<Organization> organization = organizationservice.getallOrganization();
+			modelmap.addAttribute("organization", organization);
+
+			return"universitya";
+
+
+		}
+
+       else if(ap)
+		{
+			String b = "Enter a valid name input";
+			modelmap.addAttribute("c", b);
+
+			List<Organization> organization = organizationservice.getallOrganization();
+			modelmap.addAttribute("organization", organization);
+
+			return"universitya";
+		}
+      else if(q.length()>14&&q.length()<14)
+		{
+			String b = "Enter a valid name input";
+			modelmap.addAttribute("z", b);
+
+			List<Organization> organization = organizationservice.getallOrganization();
+			modelmap.addAttribute("organization", organization);
+
+			return"universitya";
+
+
+		}
+       else if(!zx){
+
+			String b = "Enter a valid name input";
+			modelmap.addAttribute("zz", b);
+
+			List<Organization> organization = organizationservice.getallOrganization();
+			modelmap.addAttribute("organization", organization);
+
+			return"universitya";
+
+		}
+
+
+		int a=Integer.parseInt(c);
 		university.setOrganization_id(a);        
 		universityservice.saveuniversity(university);
 	return"redirect:/viewuniversity";

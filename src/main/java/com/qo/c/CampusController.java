@@ -27,12 +27,22 @@ public class CampusController {
 	 @Autowired
 	 OrganizationService organizationService;
 
+	 @RequestMapping("/addcampus")
+	 public String addString(ModelMap modelmap)
+	 {
+
+		 List<University>university=universityService.getalluniversity();
+		 modelmap.addAttribute("university",university);
+
+	 	return"campusa";
+	 }
+
+
 	 @RequestMapping("/campus")
-	 public String AddCampus(ModelMap modelmap)
+	 public String index()
 	 {
 	
-		 List<University>university=universityService.getalluniversity();
-	 	modelmap.addAttribute("university",university);
+
 
 	 	return"campus";
 	 }

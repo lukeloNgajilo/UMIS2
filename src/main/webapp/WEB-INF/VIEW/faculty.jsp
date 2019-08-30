@@ -71,13 +71,10 @@
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
+<button type="button" class="btn btn-primary" >
+    <a href="addfaculty">ADD</a>
 </button>
 
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                 <a href="/viewfaculty">VIEW</a>
-              </button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -89,54 +86,6 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body bg-secondary">
-  <form class="form-horizontal" role="form" action="/savefaculty">
-      <div class="form-group">
-          <div class="col-sm-12">
-              <select class="mdb-select md-form" name="university">
-
-                  <c:forEach items ="${university}" var="university">
-                      <option value="${university.id}">${university.uname}</option>
-                  </c:forEach>
-              </select>
-          </div>
-      </div>
-
-      <div class="form-group">
-          <div class="col-sm-12">
-              <select class="mdb-select md-form" name="campus">
-
-                  <c:forEach items ="${campus}" var="campus">
-                      <option value="${campus.id}">${campus.CName}</option>
-                  </c:forEach>
-              </select>
-          </div>
-      </div>
-      <div class="form-group">
-          <div class="col-sm-12">
-                  <input type="text" class="form-control" name="fname" placeholder="FacultyName" required="this" />
-              </div>
-            </div>
-
-              <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="code" placeholder="code" required="this" />
-              </div>
-            </div>
-          
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Shortname" placeholder="ShortName" required="this" />
-              </div>
-            </div>
-      <div class="modal-footer bg-secondary ">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-           </form>
-      </div>
-    </div>
-  </div>
-</div>
 
 
           </ul>
@@ -144,8 +93,7 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>e>hear we come</p>
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->

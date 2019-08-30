@@ -69,8 +69,8 @@
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
+<button type="button" class="btn btn-primary" >
+ <a href="adddeparment">ADD</a>
 </button>
               <button type="button" class="btn btn-primary" >
                   <a href="/viewdeparment"> VIEW</a>
@@ -85,63 +85,11 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body bg-secondary">
-  <form class="form-horizontal" role="form" action="/savedeparment">
-      <div class="form-group">
-          <div class="col-sm-12">
-              <select class="mdb-select md-form" name="university">
-      <c:forEach items ="${university}" var="university">
-      <option value="${university.id}">${university.uname}</option>
-      </c:forEach>
-      </select>
-      </div>
-    </div>
 
-      <div class="form-group">
-          <div class="col-sm-12">
-              <select class="mdb-select md-form" name="campus">
-
-                  <c:forEach items ="${campus}" var="campus">
-                      <option value="${campus.id}">${campus.CName}</option>
-                  </c:forEach>
-              </select>
-          </div>
-      </div>
-      <div class="form-group">
-          <div class="col-sm-12">
-              <select class="mdb-select md-form" name="faculty">
-
-                  <c:forEach items ="${faculty}" var="faculty">
-                      <option value="${faculty.id}"><%--${faculty.fname}--%></option>
-                  </c:forEach>
-              </select>
-          </div>
-      </div>
-      <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="DName" placeholder="DeparmentName" value="" required="this" />
-              </div>
-            </div>
-              <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="code" placeholder="Code" value="" required="this" />
-              </div>
-            </div>
-          
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="HOD" placeholder="HeadOfDeparment" value="" required="this" />
-              </div>
-            </div>
-
-
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-           </form>
       </div>
     </div>
   </div>
-</div>
+
 
 
           </ul>

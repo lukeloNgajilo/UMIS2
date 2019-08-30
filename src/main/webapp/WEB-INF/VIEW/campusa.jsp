@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
-    <%@page  isELIgnored="false" %> 
+    <%@page  isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +19,19 @@
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <style type='text/css'>
+        label{
+
+            font-size: 9px;
+
+        }
+
+
+    </style>
+
+
+
 
 </head>
 
@@ -46,7 +59,7 @@
         <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
         <a href="programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
         <a href="users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
         <a href="logout" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
 
       </div>
@@ -71,9 +84,8 @@
           
            
            <!-- Button trigger modal -->
-
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
- <a href="/viewcampus">VIEW</a> 
+ <a href="/viewcampus">VIEW</a>
 </button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -86,6 +98,11 @@
         </button>
       </div>
 
+      </div>
+    </div>
+  </div>
+
+
 
           </ul>
         </div>
@@ -94,17 +111,17 @@
       <div class="container-fluid">
 
 
+
+
           <div class="">
               <form class="form-horizontal" role="form" action="/savecampus" method="post">
 
                   <div class="form-group">
                       <div class="col-sm-12">
                           <label>universityname</label>
-
-                              <option selected>Open this select menu</option>
-                          <select class="browser-default custom-select custom-select-lg mb-3" name="university">
-                              <option selected>Open this select menu</option>
-                              <c:forEach items ="${university}" var="university">
+                              <select class="browser-default custom-select custom-select-lg mb-3" name="university">
+                                  <option selected>Open this select menu</option>
+                                  <c:forEach items ="${university}" var="university">
                                   <option value="${university.id}">${university.uname}</option>
                               </c:forEach>
                           </select>
@@ -114,88 +131,48 @@
                   <div class="form-group">
                       <div class="col-sm-12">
                           <label>campus name</label>
-                          <input type="text" class="form-control" name="CName" placeholder="CampusName" <%--value="${campus.CName}"--%>required="this" />
+                          <input type="text" class="form-control" name="CName" placeholder="CampusName" required="this" />
                       </div>
 
                   </div>
                   <div class="form-group">
                       <div class="col-sm-12">
                           <label>location</label>
-                          <input type="text" class="form-control" name="location" placeholder="location" value="<%--${campus.location}--%>" required="this" />
+                          <input type="text" class="form-control" name="location" placeholder="location" required="this" />
                       </div>
                   </div>
 
                   <div class="form-group">
                       <div class="col-sm-12">
                           <label>Region</label>
-                          <input type="text" class="form-control" name="region" placeholder="Region" <%-- value="${campus.region}--%>"required="this" />
+                          <input type="text" class="form-control" name="region" placeholder="Region" required="this" />
                       </div>
                   </div>
                   <div class="form-group">
                       <div class="col-sm-12">
                           <label>contacts</label>
-                          <input type="text" class="form-control" name="Contacts" placeholder="Contacts" <%--value="${campus.Contacts}"--%> required="this" />
+                          <input type="text" class="form-control" name="Contacts" placeholder="Contacts" required="this" />
                       </div>
                   </div>
                   <div class="form-group">
                       <div class="col-sm-12">
                           <label>website</label>
-                          <input type="text" class="form-control" name="website" placeholder="Website"<%-- value="${campus.website}"--%> required="this" />
+                          <input type="text" class="form-control" name="website" placeholder="Website" required="this" />
                       </div>
                   </div>
                   <div class="form-group">
                       <div class="col-sm-12">
                           <label>Shortname</label>
-                          <input type="text" class="form-control" name="Shortname" placeholder="ShortName" <%--value="${campus.Shortname}"--%> required= "this" />
+                          <input type="text" class="form-control" name="Shortname" placeholder="ShortName" required= "this" />
                       </div>
                   </div>
 
 
-                  <button type="submit" class="btn btn-primary">Save changes</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
               </form>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
+      </div>
     </div>
     <!-- /#page-content-wrapper -->
 

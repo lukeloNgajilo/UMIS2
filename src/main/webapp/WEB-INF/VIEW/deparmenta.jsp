@@ -41,7 +41,7 @@
         <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
         <a href="/campus" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
           <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
-        <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
+          <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
         <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
           <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
         <a href="/changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
@@ -69,11 +69,11 @@
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
+<button type="button" class="btn btn-primary" >
+ <a href="/addfaculty">ADD</a>
 </button>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                   EDIT
+              <button type="button" class="btn btn-primary" >
+                  <a href="/viewdeparment"> VIEW</a>
               </button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -89,7 +89,8 @@
   <form class="form-horizontal" role="form" action="/savedeparment">
       <div class="form-group">
           <div class="col-sm-12">
-              <select class="mdb-select md-form" name="university">
+              <select class="browser-default custom-select custom-select-lg mb-3" name="university">
+                  <option selected>Open this select menu</option>
       <c:forEach items ="${university}" var="university">
       <option value="${university.id}">${university.uname}</option>
       </c:forEach>
@@ -99,8 +100,8 @@
 
       <div class="form-group">
           <div class="col-sm-12">
-              <select class="mdb-select md-form" name="campus">
-
+              <select class="browser-default custom-select custom-select-lg mb-3" name="campus">
+                  <option selected>Open this select menu</option>
                   <c:forEach items ="${campus}" var="campus">
                       <option value="${campus.id}">${campus.CName}</option>
                   </c:forEach>
@@ -109,8 +110,8 @@
       </div>
       <div class="form-group">
           <div class="col-sm-12">
-              <select class="mdb-select md-form" name="faculty">
-
+              <select class="browser-default custom-select custom-select-lg mb-3" name="faculty">
+                  <option selected>Open this select menu</option>
                   <c:forEach items ="${faculty}" var="faculty">
                       <option value="${faculty.id}"><%--${faculty.fname}--%></option>
                   </c:forEach>
@@ -119,24 +120,22 @@
       </div>
       <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Dname" placeholder="DeparmentName" value="${deparment.DName}"required="this" />
+                  <input type="text" class="form-control" name="Dname" placeholder="DeparmentName" required="this" />
               </div>
             </div>
               <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Code" placeholder="Code" value="${deparment.code}"required="this" />
+                  <input type="text" class="form-control" name="Code" placeholder="Code" required="this" />
               </div>
             </div>
           
             <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="HOD" placeholder="HeadOfDeparment" value="${deparment.HOD}"required="this" />
+                  <input type="text" class="form-control" name="HOD" placeholder="HeadOfDeparment" required="this" />
               </div>
             </div>
 
 
-
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save changes</button>
            </form>
       </div>
@@ -150,8 +149,7 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>e>hear we come</p>
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->

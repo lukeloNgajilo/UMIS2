@@ -87,55 +87,12 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body bg-secondary">
-  <form class="form-horizontal" role="form" action="/savefaculty">
-      <div class="form-group">
-          <div class="col-sm-12">
-              <select class="mdb-select md-form" name="university">
 
-                  <c:forEach items ="${university}" var="university">
-                      <option value="${university.id}">${university.uname}</option>
-                  </c:forEach>
-              </select>
-          </div>
-      </div>
-
-      <div class="form-group">
-          <div class="col-sm-12">
-              <select class="mdb-select md-form" name="campus">
-
-                  <c:forEach items ="${campus}" var="campus">
-                      <option value="${campus.id}">${campus.CName}</option>
-                  </c:forEach>
-              </select>
-          </div>
-      </div>
-      <div class="form-group">
-          <div class="col-sm-12">
-                  <input type="text" class="form-control" name="fname" placeholder="FacultyName" value="<%--${faculty.fname}--%>" required="this" />
-              </div>
-            </div>
-
-              <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="code" placeholder="code" value="${faculty.code}" required="this" />
-              </div>
-            </div>
-          
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="ShortName" placeholder="Shortname" value="${faculty.Shortname}" required="this" />
-              </div>
-            </div>
-      <div class="modal-footer bg-secondary ">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-           </form>
-      </div>
     </div>
+
   </div>
 </div>
+        </div>
 
 
           </ul>
@@ -143,8 +100,107 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>e>hear we come</p>
+
+          <div class="">
+              <form class="form-horizontal" role="form" action="/savefaculty">
+                  <div class="form-group">
+                      <div class="col-sm-12">
+
+                              <select class="browser-default custom-select custom-select-lg mb-3" name="university">
+                              <c:forEach items ="${university}" var="university">
+                                  <option selected>Open this select menu</option>
+                                  <option value="${university.id}">${university.uname}</option>
+                              </c:forEach>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="col-sm-12">
+
+                              <select class="browser-default custom-select custom-select-lg mb-3" name="campus">
+                                  <option selected>Open this select menu</option>
+                              <c:forEach items ="${campus}" var="campus">
+                                  <option value="${campus.id}">${campus.CName}</option>
+                              </c:forEach>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <input type="text" class="form-control" name="fname" placeholder="FacultyName" value="<%--${faculty.fname}--%>" required="this" />
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <input type="text" class="form-control" name="code" placeholder="code" value="${faculty.code}" required="this" />
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <input type="text" class="form-control" name="ShortName" placeholder="Shortname" value="${faculty.Shortname}" required="this" />
+                      </div>
+                  </div>
+                  <div class=" ">
+
+                      <button type="submit" class="btn btn-primary">Save changes</button>
+
+                  </div>
+
+              </form>
+
+
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->

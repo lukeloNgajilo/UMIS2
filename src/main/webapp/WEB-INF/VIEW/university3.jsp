@@ -45,13 +45,13 @@
      
       <div class="list-group list-group-flush">
         <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
-        <a href="/campus.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
-         <a href="/faculty.jsp" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
-        <a href="/deparment.jsp" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
-        <a href="/programme.jsp" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
-         <a href="/users.jsp" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="/changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
-        <a href="/logout.jsp" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
+        <a href="/campus" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
+         <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
+        <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
+        <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
+         <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
+        <a href="/changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="/logout" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
 
       </div>
     </div>
@@ -166,40 +166,123 @@
         </div>
       </nav>
 
-    <%--   <div class="container-fluid">  
-         <table class="table table-hover table-fixed">
-            <tr>
-            <!-- 	<th>university id</th> -->
-               <th>University name</th>
-               <th>organization type</th>
-               <th> location</th>
-              <th>Campus</th>
-               <th>Website</th>
-               <th>PostalAddress</th>
-               <th>Number of campus</th>
-               <th>contacts</th>
-               <th></th>
-               <th></th>
-           </tr>
-    <c:forEach items ="${university}" var="university" >
-             <tr>
-                   <td>${university.id}</td> 
-                <td>${university.uname}</td>
-                 <td>${university.location}</td>  
-                  <td>${university.campus}</td>
-                 <td>${university.website}</td>
-                 <td>${university.PAddress}</td>
-               <td>${university.ncampus}</td>
-                 <td>${university.contacts}</td> 
-            <td>   <button  type="submit"  class="btn btn-primary"><a href="/a?id=${university.id}">EDIT</a></button> </td>
-             <td>   <button type="submit"  class="btn btn-primary"><ahref="/showeditfrom?id=${university.id}">DELETE</a></button> \</td>
-             </tr>
- -           
-                 </c:forEach>
-       </table>
+      <div class="container-fluid">
 
- 
- --%>
+
+          <div class="container-fluid">
+
+              <div class="">
+                  <form class="form-horizontal" role="form" action="/saveuniversity">
+                      <div class="form-group " >
+                          <div class="col-sm-12">
+                              <label >UNIVERSITY NAME</label>
+                              <input type="text" class="form-control" name="uname" placeholder="UniversityName"  value="${university.uname}"required="this" />
+                                        ${a}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <label>ORGANIZATION TYPE</label>
+                              <select class="browser-default custom-select custom-select-lg mb-3" name="organization">
+                                  <option selected>Open this select menu</option>
+                                  <c:forEach items ="${organization}" var="organizations">
+                                      <option value="${organizations.id}">${organizations.name}</option>
+                                  </c:forEach>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <label >LOCATION</label>
+                              <input type="text" class="form-control" name="location" placeholder="Location" value="${university.location}" required="this" />
+                              ${b}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <label >CAMPUS</label>
+                              <input type="text" class="form-control" name="Campus" placeholder="Campus"  value=" ${university.campus}" required="this" />
+                              ${c}
+
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <label >WEBSITE</label>
+                              <input type="text" class="form-control" name="Website" placeholder="Website" value="${university.website}" required="this" />
+                              ${w}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <label >POSTAL ADDRESS</label>
+                              <input type="text" class="form-control" name="PAddress" placeholder="PostalAddress" value="${university.PAddress }" required="this" />
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <label >NUMBER OF CAMPUS</label>
+                              <input type="text" class="form-control" name="ncampus" placeholder="Number of campus" value="${university.ncampus}"  required="this" />
+                                       ${zz}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <label >contacts</label>
+                              <input type="number" class="form-control" name="Contacts" placeholder="Contacts"  value="${university.contacts}" required="this" />
+                              ${z}
+                          </div>
+                      </div>
+
+              </div>
+              <div class="">
+
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                  </form>
+              </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->

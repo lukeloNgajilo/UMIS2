@@ -44,10 +44,10 @@
         <a href="/campus" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
           <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
         <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
-        <a href="programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
-        <a href="users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
-        <a href="logout.jsp" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
+        <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
+        <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
+        <a href="/changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="/logout" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
 
       </div>
     </div>
@@ -71,10 +71,10 @@
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
+<button type="button" class="btn btn-primary">
+<a href="/addcampus">ADD</a>
 </button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary">
  <a href="/viewcampus">VIEW</a>
 </button>
 <!-- Modal -->
@@ -151,7 +151,41 @@
 
       <div class="container-fluid">
         <h1 class="mt-4">Simple Sidebar</h1>
-        <p>${msg} }</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->

@@ -75,11 +75,11 @@
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
+<button type="button" class="btn btn-primary">
+  <a href="/adduniversity">ADD</a>
 </button>
 <button type="button" class="btn btn-primary">
-  VIEW
+    <a href="/viewuniversity" >VIEW</a>
 </button>
 
 <!-- Modal -->
@@ -92,77 +92,15 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body bg-secondary">
-  <form class="form-horizontal" role="form" action="saveuniversity" method="get">
-      <div class="form-group">
 
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="uname" placeholder="UniversityName" required="this" />
-              </div>
-            </div>
-              <div class="form-group">
-              <div class="col-sm-12">
-                 <div class="col-sm-12">
-               <select class="mdb-select md-form" name="organization">
-                  
- <c:forEach items ="${organization}" var="organizations">
-              <option value="${organizations.id}">${organizations.name}</option>
-            </c:forEach>
-        
-</select>
-             
-              </div>
-            </div>
-          
-            <div class="form-group">
-              <div class="col-sm-12">
-                   <input type="text" class="form-control" name="Location" placeholder="Location"   required="this" />
-               </div>
-            </div>
-             <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Campus" placeholder="Campus"  required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control"  name="Website" placeholder="Website"  required="this" />
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="PAddress" placeholder="PostalAddress"  required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="ncampus" placeholder="Number of campus" required="this" />
-              </div>
-            </div>
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Contacts" placeholder="Contacts"required="this" />
-              </div>
-             <div class="form-group">
-            </div>
-            
-      </div>
-      <div class="modal-footer bg-secondary">
-        <button type="button" class="btn btn-primary " data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-           </form>
-      </div>
-    </div>
-  </div>
-</div>
           </ul>
         </div>
       </nav>
 
-  <div class="container-fluid">  
+  <div class="container-fluid">
         <table class="table table-hover table-fixed">
             <tr>
-            
+
                <th>University name</th>
                <th>organization type</th>
                <th> location</th>
@@ -171,30 +109,24 @@
                <th>PostalAddress</th>
                <th>Number of campus</th>
                <th>contacts</th>
-               <th></th>
-               <th></th>
            </tr>
     <c:forEach items ="${university}" var="university" >
              <tr>
-                   
+
                 <td>${university.uname}</td>
                 <td>${university.getOrganization().getName()}</td>
-                 <td>${university.location}</td>  
+                 <td>${university.location}</td>
                   <td>${university.campus}</td>
                  <td>${university.website}</td>
                  <td>${university.PAddress}</td>
                <td>${university.ncampus}</td>
-                 <td>${university.contacts}</td> 
+                 <td>${university.contacts}</td>
             <td>   <button  type="submit"  class="btn btn-primary"><a href="/edituniversity?id=${university.id}">EDIT</a></button> </td>
              <td>   <button type="submit"  class="btn btn-primary"><a href="/deleteuniversity?id=${university.id}">DELETE</a></button> </td>
              </tr>
- -           
+ -
                  </c:forEach>
        </table>
- 
- 
-
-     
 
 
 
@@ -205,7 +137,11 @@
 
 
 
-     
+
+
+
+
+
 
       </div>
     </div>

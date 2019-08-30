@@ -75,8 +75,8 @@
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
+<button type="button" class="btn btn-primary" >
+  <a href="/adduniversity">ADD</a>
 </button>
 <button type="button" class="btn btn-primary">
   <a href="/viewuniversity">VIEW</a>
@@ -91,69 +91,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body bg-secondary">
-  <form class="form-horizontal" role="form" action="saveuniversity" method="get">
-      <div class="form-group">
 
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="uname" placeholder="UniversityName" required="this" />
-              </div>
-            </div>
-              <div class="form-group">
-              <div class="col-sm-12">
-               <select class="mdb-select md-form" name="organization">
-                  
- 			<c:forEach items ="${organization}" var="organizations">
-              <option value="${organizations.id}">${organizations.name}</option>
-            </c:forEach>
-				</select>
-
-              </div>
-            </div>
-          
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Location" placeholder="Location" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Campus" placeholder="Campus" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control"  name="Website" placeholder="Website" required="this" />
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="PAddress" placeholder="PostalAddress" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="ncampus" placeholder="Number of campus" required="this" />
-              </div>
-            </div>
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Contacts" placeholder="Contacts" required="this" />
-              </div>
-             <div class="form-group">
-            </div>
-            
-
-
-
-
-
-      </div>
-      <div class="modal-footer bg-secondary">
-        <button type="button" class="btn btn-primary " data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-           </form>
-      </div>
     </div>
   </div>
 </div>
@@ -161,9 +99,9 @@
         </div>
       </nav>
 
-      <div class="container-fluid">  
-      
-      
+      <div class="container-fluid">
+
+
           
       
        <%--   <table class="table table-hover table-fixed">
