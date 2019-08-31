@@ -73,11 +73,11 @@
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
+<button type="button" class="btn btn-primary" >
+    <a href="/addprogramme">ADD</a>
 </button>
-              <button type="button" class="btn btn-primary" ><a href="/viewprogramme">VIEW</a>
-              </button>
+              <button type="button" class="btn btn-primary" ><a href="/viewprogramme">VIEW</a>     </button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -89,89 +89,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body bg-secondary ">
-      <form class="form-horizontal" role="form" action="saveprogramme" method="post">
-          <div class="form-group">
-              <div class="col-sm-12">
-                  <select class="mdb-select md-form" name="university">
-                      <c:forEach items ="${university}" var="university">
-                          <option value="${university.id}">${university.uname}</option>
-                      </c:forEach>
-                  </select>
-              </div>
-          </div>
 
-          <div class="form-group">
-              <div class="col-sm-12">
-                  <select class="mdb-select md-form" name="campus">
-                      <c:forEach items ="${campus}" var="campus">
-                          <option value="${campus.id}">${campus.CName}</option>
-                      </c:forEach>
-                  </select>
-              </div>
-          </div>
-          
-          <div class="form-group">
-              <div class="col-sm-12">
-                  <select class="mdb-select md-form" name="deparment">
-                      <c:forEach items ="${deparment}" var="deparment">
-                          <option value="${deparment.id}">${deparment.DName}</option>
-                      </c:forEach>
-                  </select>
-              </div>
-          
-          </div>
-          <div class="form-group">
-              <div class="col-sm-12">
-                  <select class="mdb-select md-form" name="faculty">
-                      <c:forEach items ="${faculty}" var="faculty">
-                          <option value="${faculty.id}"><%--${faculty.fname}--%></option>
-                      </c:forEach>
-                  </select>
-              </div>
-          
-          </div>
-      <div class="form-group">
-             <div class="col-sm-12">
-                  <input type="text" class="form-control" name="name" placeholder="ProgrammeName" required="this" />
-              </div>
-            </div>
-              <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Otype" placeholder="ProgrammeType" required="this" />
-              </div>
-            </div>
-          
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="code" placeholder="Location" required="this" />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="ShortName" placeholder="ShortName" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Year" placeholder="TimeInterval" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Faculty" placeholder="Faculty" required="this" />
-              </div>
-            </div>
-
-
-
-      </div>
-      <div class="modal-footer bg-secondary ">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-           </form>
-      </div>
     </div>
   </div>
 </div>
@@ -183,6 +101,9 @@
 
       <div class="container-fluid">
 
+
+          <table class="table table-hover table-fixed">
+              <tr>
 
 
 

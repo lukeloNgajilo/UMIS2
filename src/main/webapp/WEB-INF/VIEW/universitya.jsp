@@ -125,7 +125,6 @@
       <div class="col-sm-12">
           <label>ORGANIZATION TYPE</label>
       <select class="browser-default custom-select custom-select-lg mb-3" name="organization" required="this">
-
           <c:forEach items ="${organization}" var="organizations">
               <option value="${organizations.id}">${organizations.name}</option>
           </c:forEach>
@@ -166,8 +165,8 @@
                   <input type="text" class="form-control" name="ncampus" placeholder="Number of campus"required="this" />
                                                 ${zz}
               </div>
-
             </div>
+
              <div class="form-group">
               <div class="col-sm-12">
                   <label >Contatcs</label>

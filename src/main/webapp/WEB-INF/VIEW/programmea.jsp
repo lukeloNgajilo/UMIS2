@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  
+
 <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand ">UMIS</a>
   <form class="form-inline">
@@ -34,16 +34,18 @@
 
 
 
+
+
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class= "bg-secondary border-right" id="sidebar-wrapper">
+    <div class="bg-secondary  border-right" id="sidebar-wrapper">
       
       <div class="list-group list-group-flush">
         <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
-          <a href="/campus" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
+        <a href="/campus." class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
           <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
-          <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
+        <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
         <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
           <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
         <a href="/changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
@@ -56,7 +58,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-secondary border-bottom">
+      <nav class="navbar navbar-expand-lg navbar-light bg-secondary  border-bottom">
         <button class="btn btn-primary" id="menu-toggle">Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,25 +74,23 @@
            
            <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" >
-    <a href="addfaculty" >ADD</a>
+    <a href="addprogramme">ADD</a>
 </button>
-
-              <button type="button" class="btn btn-primary" >
-                 <a href="/viewfaculty">VIEW</a>
+              <button type="button" class="btn btn-primary" ><a href="/viewprogramme">VIEW</a>
               </button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header bg-secondary">
-        <h5 class="modal-title " id="exampleModalLabel"> FACULTY DETAILS</h5>
+      <div class="modal-header bg-secondary ">
+        <h5 class="modal-title" id="exampleModalLabel"> PROGRAMME DETAILS</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>
 
@@ -101,12 +101,13 @@
 
       <div class="container-fluid">
 
-          <div class="">
-              <form class="form-horizontal" role="form" action="/savefaculty">
+
+          <div class=" ">
+              <div class="form-horizontal" role="form" action="saveprogramme" method="post">
                   <div class="form-group">
                       <div class="col-sm-12">
-                          <label>UNIVERSITY</label>
-                              <select class="browser-default custom-select custom-select-lg mb-3" name="university">
+                          <label>university</label>
+                          <select class="browser-default custom-select custom-select-lg mb-3" name="university" required="this">
                               <c:forEach items ="${university}" var="university">
                                   <option value="${university.id}">${university.uname}</option>
                               </c:forEach>
@@ -116,87 +117,106 @@
 
                   <div class="form-group">
                       <div class="col-sm-12">
-                                <label>campus</label>
-                              <select class="browser-default custom-select custom-select-lg mb-3" name="campus">
+                          <label>campus</label>
+                          <select class="browser-default custom-select custom-select-lg mb-3" name="campus" required="this">
                               <c:forEach items ="${campus}" var="campus">
                                   <option value="${campus.id}">${campus.CName}</option>
                               </c:forEach>
                           </select>
                       </div>
                   </div>
+
                   <div class="form-group">
                       <div class="col-sm-12">
-                          <label>facultyname</label>
-                          <input type="text" class="form-control" name="fname" placeholder="FacultyName" required="this" />
+                          <label>deparment</label>
+                          <select class="browser-default custom-select custom-select-lg mb-3" name="deparment" required="this">
+                              <c:forEach items ="${deparment}" var="deparment">
+                                  <option value="${deparment.id}">${deparment.DName}</option>
+                              </c:forEach>
+                          </select>
+                      </div>
+
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>faculty</label>
+                          <select class="browser-default custom-select custom-select-lg mb-3" name="faculty" required="this">
+                              <c:forEach items ="${faculty}" var="faculty">
+                                  <option value="${faculty.id}"><%--${faculty.fname}--%></option>
+                              </c:forEach>
+                          </select>
+                      </div>
+
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>programme name</label>
+                          <input type="text" class="form-control" name="name" placeholder="ProgrammeName" required="this" />
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>programme type</label>
+                          <input type="text" class="form-control" name="Otype" placeholder="ProgrammeType" required="this" />
                       </div>
                   </div>
 
                   <div class="form-group">
                       <div class="col-sm-12">
-                          <label>code</label>
-                          <input type="text" class="form-control" name="Code" placeholder="code" required="this" />
+                          <label>location</label>
+                          <input type="text" class="form-control" name="code" placeholder="Location" required="this" />
                       </div>
                   </div>
 
                   <div class="form-group">
                       <div class="col-sm-12">
-                          <label>Shortname</label>
-                          <input type="text" class="form-control" name="Shortname" placeholder="ShortName" required="this" />
+                          <label>shortname</label>
+                          <input type="text" class="form-control" name="ShortName" placeholder="ShortName" required="this" />
                       </div>
                   </div>
-                  <div class=>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>timeinterval</label>
+                          <input type="text" class="form-control" name="Year" placeholder="TimeInterval" required="this" />
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>faculty</label>
+                          <input type="text" class="form-control" name="Faculty" placeholder="Faculty" required="this" />
+                      </div>
+                  </div>
 
-                      <button type="submit" class="btn btn-primary">Save changes</button>
-              </form>
-          </div>
+
+              </div>
+
+              <div class="">
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                  </form>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
     </div>
     <!-- /#page-content-wrapper -->
 

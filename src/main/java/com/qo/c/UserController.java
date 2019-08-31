@@ -51,12 +51,12 @@ public class UserController {
 	  return "Users3";
   }
 
-  @RequestMapping("/")
+  @RequestMapping("/login")
 	public String deleteusers()
 	{
 
 
-		return "";
+		return "login";
 	}
 
 

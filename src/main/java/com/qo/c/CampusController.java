@@ -54,8 +54,8 @@ public class CampusController {
 	     	List<Campus>campus=campusService.getallCampus();
 		   List<University>university=universityService.getalluniversity();
 		   List<Organization>organization=organizationService.getallOrganization();
-		   modelmap.addAttribute("university",university);
-		   modelmap.addAttribute("campus",campus);
+		   modelmap.addAttribute("university",university); 
+		           modelmap.addAttribute("campus",campus);
 
 		   return"campus2";
 	   }
@@ -80,7 +80,7 @@ public class CampusController {
 	   	List<University>university=universityService.getalluniversity();
 	   	List<Campus>campus=campusService.getallCampus();
 	   	modelMap.addAttribute("university",university);
-        modelMap.addAttribute("campus",campus);
+		 modelMap.addAttribute("campus",campus); 
 	   	return"campus3";
 	   }
 

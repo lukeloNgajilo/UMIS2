@@ -4,6 +4,8 @@ import javax.persistence.*;
 
 @Entity
 public class Programme {
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
@@ -44,7 +46,13 @@ public class Programme {
 	private Deparment deparment;
 
 
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public Deparment getDeparment() {
 		return deparment;

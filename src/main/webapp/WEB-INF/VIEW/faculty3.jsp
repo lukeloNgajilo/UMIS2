@@ -76,7 +76,7 @@
 </button>
 
               <button type="button" class="btn btn-primary">
-                  VIEW
+                 <a href="/viewfaculty">VIEW</a>
               </button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -108,7 +108,6 @@
 
                               <select class="browser-default custom-select custom-select-lg mb-3" name="university">
                               <c:forEach items ="${university}" var="university">
-                                  <option selected>Open this select menu</option>
                                   <option value="${university.id}">${university.uname}</option>
                               </c:forEach>
                           </select>
@@ -119,7 +118,7 @@
                       <div class="col-sm-12">
 
                               <select class="browser-default custom-select custom-select-lg mb-3" name="campus">
-                                  <option selected>Open this select menu</option>
+
                               <c:forEach items ="${campus}" var="campus">
                                   <option value="${campus.id}">${campus.CName}</option>
                               </c:forEach>
@@ -128,19 +127,19 @@
                   </div>
                   <div class="form-group">
                       <div class="col-sm-12">
-                          <input type="text" class="form-control" name="fname" placeholder="FacultyName" value="<%--${faculty.fname}--%>" required="this" />
+                          <input type="text" class="form-control" name="fname" placeholder="FacultyName" <%--value="${faculty.fname}" --%>required="this" />
                       </div>
                   </div>
 
                   <div class="form-group">
                       <div class="col-sm-12">
-                          <input type="text" class="form-control" name="code" placeholder="code" value="${faculty.code}" required="this" />
+                          <input type="text" class="form-control" name="code" placeholder="code" <%--value="${faculty.Code}"--%> required="this" />
                       </div>
                   </div>
 
                   <div class="form-group">
                       <div class="col-sm-12">
-                          <input type="text" class="form-control" name="ShortName" placeholder="Shortname" value="${faculty.Shortname}" required="this" />
+                          <input type="text" class="form-control" name="ShortName" placeholder="Shortname" <%--value="${faculty.Shortname}" --%>required="this" />
                       </div>
                   </div>
                   <div class=" ">

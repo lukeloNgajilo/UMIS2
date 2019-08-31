@@ -11,9 +11,7 @@ import java.util.List;
 public class Deparment {
 
 
-	public void setFaculty(Faculty faculty) {
-		this.faculty = faculty;
-	}
+
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="Faculty_id",nullable=false,insertable = false, updatable =false)
@@ -63,22 +61,30 @@ public class Deparment {
 		this.faculty_id = faculty_id;
 	}
 
+	public void setFaculty(Faculty faculty) {
+		this.faculty = faculty;
+	}
 
 public String getDName() {
 	return DName;
 }
+
 public String getCode() {
 	return code;
 }
+
 public String getFaculty() {
 	return Faculty;
 }
+
 public void setDName(String dName) {
 	DName = dName;
 }
+
 public void setCode(String code) {
 	this.code = code;
 }
+
 public void setFaculty(String faculty) {
 	Faculty = faculty;
 }

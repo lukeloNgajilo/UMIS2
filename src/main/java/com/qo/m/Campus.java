@@ -36,8 +36,8 @@ public class Campus {
 public void setUniversity(University university) {
 	this.university = university;
 }
-	@Column(name="CampusName",nullable=false)
-	private String CName;
+	@Column(name="CampusName")
+	private String ame;
 
 	@Column(nullable=false)
 	private String location;
@@ -68,7 +68,7 @@ public void setUniversity(University university) {
 
 	
 	public String getCName() {
-		return  CName;
+		return  ame;
 	}
 	public String getLocation() {
 		return location;
@@ -88,7 +88,7 @@ public void setUniversity(University university) {
 		return Shortname;
 	}
 	public void setCName(String cName) {
-		CName = cName;
+		ame = cName;
 	}
 	public void setLocation(String location) {
 		this.location = location;
@@ -108,7 +108,7 @@ public void setUniversity(University university) {
 	}
 	@Override
 	public String toString() {
-		return "Campus [cname=" + CName + ", location=" + location + ", region=" + region + ", Contacts=" + Contacts
+		return "Campus [cname=" + ame + ", location=" + location + ", region=" + region + ", Contacts=" + Contacts
 				+ ", Website=" + website + ", Faculty=" + ", ShortName=" + Shortname + "]";
 	}
 	

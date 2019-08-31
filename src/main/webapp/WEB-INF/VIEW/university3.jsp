@@ -184,7 +184,7 @@
                           <div class="col-sm-12">
                               <label>ORGANIZATION TYPE</label>
                               <select class="browser-default custom-select custom-select-lg mb-3" name="organization">
-                                  <option selected>Open this select menu</option>
+
                                   <c:forEach items ="${organization}" var="organizations">
                                       <option value="${organizations.id}">${organizations.name}</option>
                                   </c:forEach>
@@ -230,7 +230,7 @@
                           <div class="col-sm-12">
                               <label >contacts</label>
                               <input type="number" class="form-control" name="Contacts" placeholder="Contacts"  value="${university.contacts}" required="this" />
-                              ${z}
+                                                    ${z}
                           </div>
                       </div>
 

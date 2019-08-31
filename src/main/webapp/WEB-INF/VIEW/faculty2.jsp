@@ -71,11 +71,9 @@
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
+<button type="button" class="btn btn-primary">
+ <a href="/addfaculty">ADD</a>
 </button>
-              <button type="button" class="btn btn-primary" >
-             <a href="/viewfaculty"></a>    VIEW</button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -117,7 +115,7 @@
 
               <div class="form-group">
               <div class="col-sm-12">
-                  <input type="text" class="form-control" name="code" placeholder="code" required="this" />
+                  <input type="text" class="form-control" name="Code" placeholder="code" required="this" />
               </div>
             </div>
           
@@ -155,7 +153,7 @@
               </tr>
               <c:forEach items ="${faculty}" var="faculty" >
                   <tr>
-                      <td>${faculty.getCampus().getUniversity().getUname()}</td>
+                      <td><%--${faculty.getCampus().getUniversity().getUname()}--%></td>
                       <td>${faculty.getCampus().getCName()}</td>
                       <td><%-- ${faculty.fname} --%></td>
 

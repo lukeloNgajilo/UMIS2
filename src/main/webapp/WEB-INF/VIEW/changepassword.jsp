@@ -40,7 +40,7 @@
         <a href="faculty.jsp" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
         <a href="campus.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
         <a href="deparment.jsp" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
-        <a href="programme.jsp" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
+        <a href="programmea.jsp" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
           <a href="users.jsp" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
         <a href="changepassword.jsp" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
         <a href="logout.jsp" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>

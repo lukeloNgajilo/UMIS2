@@ -120,7 +120,7 @@
                       <div class="col-sm-12">
                           <label>universityname</label>
                               <select class="browser-default custom-select custom-select-lg mb-3" name="university">
-                                  <option selected>Open this select menu</option>
+
                                   <c:forEach items ="${university}" var="university">
                                   <option value="${university.id}">${university.uname}</option>
                               </c:forEach>
@@ -131,7 +131,7 @@
                   <div class="form-group">
                       <div class="col-sm-12">
                           <label>campus name</label>
-                          <input type="text" class="form-control" name="CName" placeholder="CampusName" required="this" />
+                          <input type="text" class="form-control" name="ame" placeholder="CampusName" required="this" />
                       </div>
 
                   </div>

@@ -23,18 +23,38 @@ import java.util.List;
 public class DeparmentController {
 
 
-@Autowired
+    @Autowired
     UniversityService universityService;
 
-@Autowired
+    @Autowired
     CampusService campusService;
 
-@Autowired
+    @Autowired
     Facultyservice facultyservice;
 
-@Autowired
+    @Autowired
     DeparmentService deparmentservice;
-@RequestMapping("/deparment")
+
+
+    @RequestMapping("/deparment")
+    public String index()
+
+    {
+
+
+        return "deparment";
+    }
+
+
+
+
+
+
+
+
+
+
+@RequestMapping("/adddeparment")
 public String adddeparment(ModelMap modelmap )
 {
     List<University>university=universityService.getalluniversity();
@@ -44,7 +64,7 @@ public String adddeparment(ModelMap modelmap )
     modelmap.addAttribute("faculty",faculty);
     modelmap.addAttribute("campus",campus);
     modelmap.addAttribute("university",university);
-    return "deparment";
+    return "deparmenta";
 }
  @RequestMapping("/viewdeparment")
 public String viewdeparment(ModelMap modelmap)

@@ -109,9 +109,10 @@
     <th>Headofdeparment</th>
     <th></th>
 </tr>
-<c:forEach items ="${deparment}" var="deparment" >
+   <c:forEach items ="${deparment}" var="deparment" >
     <tr>
     <td><%--${deparment.getFaculty().getCampus().getUniversity().getUname()}--%></td>
+        <td><%--${deparment.getFaculty().getCampus.getCName()}--%></td>
     <td>${deparmnet.getCName()}</td>
     <td>${deparment.DName}</td>
     <td>${deparment.code}</td>

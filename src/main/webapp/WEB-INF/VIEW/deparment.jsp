@@ -70,7 +70,7 @@
            
            <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary">
-<a href="/adddeoarment">ADD</a>
+<a href="/adddeparment">ADD</a>
 </button>
               <button type="button" class="btn btn-primary" >
                   <a href="/viewdeparment"> VIEW</a>

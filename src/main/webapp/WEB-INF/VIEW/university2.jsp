@@ -78,9 +78,7 @@
 <button type="button" class="btn btn-primary">
   <a href="/adduniversity">ADD</a>
 </button>
-<button type="button" class="btn btn-primary">
-    <a href="/viewuniversity" >VIEW</a>
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

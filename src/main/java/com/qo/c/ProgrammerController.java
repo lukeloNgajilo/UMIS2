@@ -32,9 +32,12 @@ public class ProgrammerController {
 	Facultyservice facultyservice;
 
 
-	@RequestMapping("/programme")
-	public String addprogramme(ModelMap modelmap)
+
+
+	@RequestMapping("/addprogramme")
+   public String addprogramme(ModelMap modelmap)
 	{
+
 		List<University> university=universityService.getalluniversity();
 		List<Campus>campus=campusService.getallCampus();
 		List<Faculty>faculty=facultyservice.getallFaculty();
@@ -43,7 +46,14 @@ public class ProgrammerController {
 		modelmap.addAttribute("faculty",faculty);
 		modelmap.addAttribute("campus",campus);
 		modelmap.addAttribute("university",university);
-    	modelmap.addAttribute("deparment",deparment);
+		modelmap.addAttribute("deparment",deparment);
+
+
+		return"programmea";
+	}
+	@RequestMapping("/programme")
+	public String indexprogramme()
+	{
 
 		return"programme";
 	}

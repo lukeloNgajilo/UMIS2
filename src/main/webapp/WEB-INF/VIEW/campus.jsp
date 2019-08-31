@@ -102,7 +102,7 @@
               </div>
                <div class="form-group">
           <div class="col-sm-12">
-              <input type="text" class="form-control" name="CName" placeholder="CampusName" required="this" />
+              <input type="text" class="form-control" name="ame" placeholder="CampusName" required="this" />
           </div>
 
             </div>

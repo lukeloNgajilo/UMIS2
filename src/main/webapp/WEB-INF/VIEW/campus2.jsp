@@ -72,11 +72,9 @@
            
            <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" >
-  ADD
+  <a href="/addcampus">ADD</a>
 </button>
-<button type="button" class="btn btn-primary">
-  <a href="/viewcampus">VIEW</a>
-</button>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -101,7 +99,7 @@
               </div>
                <div class="form-group">
           <div class="col-sm-12">
-              <input type="text" class="form-control" name="CName" placeholder="CampusName"  required="this" />
+              <input type="text" class="form-control" name="ame" placeholder="CampusName"  required="this" />
           </div>
 
             </div>

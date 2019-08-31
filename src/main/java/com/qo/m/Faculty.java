@@ -43,19 +43,19 @@ public class Faculty {
 
 
 	public Campus getCampus() {
-		return Campus;
+		return campus;
 	}
 
 	public void setCampus(Campus campus) {
-		Campus = campus;
+		this.campus = campus;
 	}
 
 	@JoinColumn(name = "Campus_id",nullable=false,insertable = false, updatable =false)
 	@ManyToOne(fetch = FetchType.EAGER)
-	private Campus Campus;
-    
-    
-    
+	private Campus campus;
+
+
+
     public String getFName() {
 		return fname;
 	}

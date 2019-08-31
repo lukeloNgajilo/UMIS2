@@ -69,12 +69,9 @@
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
-</button>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                   EDIT
-              </button>
+<button type="button" class="btn btn-primary" >
+              <a href="">ADD</a>
+</butto
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -85,61 +82,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body bg-secondary">
-  <form class="form-horizontal" role="form" action="/savedeparment">
-      <div class="form-group">
-          <div class="col-sm-12">
-              <select class="mdb-select md-form" name="university">
-      <c:forEach items ="${university}" var="university">
-      <option value="${university.id}">${university.uname}</option>
-      </c:forEach>
-      </select>
-      </div>
-    </div>
 
-      <div class="form-group">
-          <div class="col-sm-12">
-              <select class="mdb-select md-form" name="campus">
-
-                  <c:forEach items ="${campus}" var="campus">
-                      <option value="${campus.id}">${campus.CName}</option>
-                  </c:forEach>
-              </select>
-          </div>
-      </div>
-      <div class="form-group">
-          <div class="col-sm-12">
-              <select class="mdb-select md-form" name="faculty">
-
-                  <c:forEach items ="${faculty}" var="faculty">
-                      <option value="${faculty.id}"><%--${faculty.fname}--%></option>
-                  </c:forEach>
-              </select>
-          </div>
-      </div>
-      <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Dname" placeholder="DeparmentName" value="${deparment.DName}"required="this" />
-              </div>
-            </div>
-              <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Code" placeholder="Code" value="${deparment.code}"required="this" />
-              </div>
-            </div>
-          
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="HOD" placeholder="HeadOfDeparment" value="${deparment.HOD}"required="this" />
-              </div>
-            </div>
-
-
-
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-           </form>
-      </div>
     </div>
   </div>
 </div>
@@ -150,8 +93,99 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>e>hear we come</p>
+
+
+          <div class="">
+              <form class="form-horizontal" role="form" action="/savedeparment">
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>university</label>
+                          <select class="browser-default custom-select custom-select-lg mb-3" name="university" required="this">
+                              <c:forEach items ="${university}" var="university">
+                                  <option value="${university.id}">${university.uname}</option>
+                              </c:forEach>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>campus</label>
+                          <select class="browser-default custom-select custom-select-lg mb-3" name="campus" required="this">
+                              <c:forEach items ="${campus}" var="campus">
+                                  <option value="${campus.id}">${campus.CName}</option>
+                              </c:forEach>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>faculty</label>
+                          <select class="browser-default custom-select custom-select-lg mb-3" name="faculty" required="this">
+                              <c:forEach items ="${faculty}" var="faculty">
+                                  <option value="${faculty.id}"><%--${faculty.fname}--%></option>
+                              </c:forEach>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>DeparmentName</label>
+                          <input type="text" class="form-control" name="Dname" placeholder="DeparmentName" value="${deparment.DName}"required="this" />
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>code</label>
+                          <input type="text" class="form-control" name="Code" placeholder="Code" value="${deparment.code}"required="this" />
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>headOfdeparment</label>
+                          <input type="text" class="form-control" name="HOD" placeholder="HeadOfDeparment" value="${deparment.HOD}"required="this" />
+                      </div>
+                  </div>
+
+
+
+
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+              </form>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->
