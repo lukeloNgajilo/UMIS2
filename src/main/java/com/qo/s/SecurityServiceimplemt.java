@@ -16,18 +16,18 @@ public class SecurityServiceimplemt implements SecurityService {
 	@Autowired
 	UserDetailsimplementssss userdetailsss;
 
-	public SecurityServiceimplemt() {
-	}
+	/*public SecurityServiceimplemt() {
+	}*/
 
 	@Autowired
 	@Qualifier("authenticationManagerBean")
 	AuthenticationManager authenticationManager;
 
     @Override
-	public boolean login(String username, String password) {
-		UserDetails userDetails =userdetailsss.loadUserByUsername(username);
+	public boolean login(String email, String password) {
+		UserDetails userdetails =userdetailsss.loadUserByUsername(email);
 
-		UsernamePasswordAuthenticationToken token= new UsernamePasswordAuthenticationToken(userDetails,password,userDetails.getAuthorities());
+		UsernamePasswordAuthenticationToken token= new UsernamePasswordAuthenticationToken(userdetails,password,userdetails.getAuthorities());
 
 		authenticationManager.authenticate(token);
 

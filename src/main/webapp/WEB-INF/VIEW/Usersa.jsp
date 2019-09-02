@@ -144,7 +144,7 @@
             <div class="form-group">
               <div class="col-sm-12">
               	<LABEL>PASSWORD</LABEL>
-                  <input type="text" class="form-control" name="password" placeholder="password" required="this" />
+                  <input type="password" class="form-control" name="password" placeholder="password" required="this" />
               </div>
             </div>
              <div class="form-group">

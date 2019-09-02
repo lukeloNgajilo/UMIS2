@@ -21,7 +21,8 @@ public class UserDetailsimplementssss implements UserDetailsService {
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		Users user=	userRespo.findByEmail(email);
-     if(user==null)
+
+     if(user == null)
 	 {
 
 
