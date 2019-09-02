@@ -1,11 +1,11 @@
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <%@page  isELIgnored="false" %>
+
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -22,6 +22,27 @@
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
+
+
+
+
+
+
+
+    <style type='text/css'>
+        label{
+
+            font-size: 9px;
+
+        }
+
+
+    </style>
+
+
+
+
+
 
 </head>
 
@@ -44,12 +65,12 @@
       <div class="list-group list-group-flush">
         <a href="/university" class="list-group-item list-group-item-action bg-secondary text-light">UNIVERSITY</a>
         <a href="/campus" class="list-group-item list-group-item-action bg-secondary text-light">CAMPUS</a>
-          <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
+        <a href="/faculty" class="list-group-item list-group-item-action bg-secondary text-light">FACULTY</a>
         <a href="/deparment" class="list-group-item list-group-item-action bg-secondary text-light">DEPARMENT</a>
         <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
          <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
-        <a href="/changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
-        <a href="/logout" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
+        <a href="changepassword.html" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
+        <a href="logout.html" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -67,55 +88,106 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        lukelo
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">profile</a>
-                        <a class="dropdown-item" href="#">changepassword</a>
-                        <a class="dropdown-item" href="#">logout</a>
-                    </div>
-                </div>
+              <a class="nav-link" href="#">User<span class="sr-only">(current)</span></a>
             </li>
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary">
-    <a href="/addusers">ADD</a>
+
+<button type="button" class="btn btn-primary" >
+<a href="/viewuser">VIEW</a>
 </button>
-              <button type="button" class="btn btn-primary">
-                  <a href="/viewuser"> VIEW</a>
-              </button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-
+  
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-                  </button>
-           </div>
+        </button>
+      </div>
+     
+  </div>
+</div>
 
+</div>
+          </ul>
+        </div>
+      </nav>
 
+      <div class="container-fluid">
+        
 
-
-
-
-
-           </div>
-           </div>
+ <div class="">
+           <form class="form-horizontal" role="form" action="/saveuser">
+            <div class="form-group">
+              <div class="col-sm-12">
+              	<LABEL>NAME</LABEL>
+                  <input type="text" class="form-control" name="name" placeholder="Name" required="this" />
+              </div>
             </div>
+              <div class="form-group">
+              <div class="col-sm-12">
+              	<LABEL>TELEPHONE</LABEL>
+                  <input type="text" class="form-control" name="telephone" placeholder="Telephone" required="this" />
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <div class="col-sm-12">
+              	<LABEL>EMAIL</LABEL>
+                  <input type="email" class="form-control" name="email" placeholder="email" required="this" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+              	<LABEL>PASSWORD</LABEL>
+                  <input type="text" class="form-control" name="password" placeholder="password" required="this" />
+              </div>
+            </div>
+             <div class="form-group">
+              <div class="col-sm-12">
+              	<LABEL></LABEL>
+                  <input type="text" class="form-control" name="role" placeholder="role" required="this" />
+              </div>
+            </div>
+            
+          
+
+      </div>
+      <div class="">
+       
+        <button type="submit" class="btn btn-primary">Save changes</button>
+           </form>
+      </div>
+    </div>
 
 
-            </ul>
-                 </div>
-                </nav>
 
-                <div class="container-fluid">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       </div>
     </div>

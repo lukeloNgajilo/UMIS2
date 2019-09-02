@@ -9,4 +9,6 @@ import com.qo.m.*;
 @Repository
 public interface UserRespo extends JpaRepository<Users, Integer> {
 
+    Users findByEmail(String email);
+
 }

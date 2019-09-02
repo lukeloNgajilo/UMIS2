@@ -35,6 +35,10 @@ private UserRespo userrespo;
             userrespo.delete(user);
 	}
 
+	@Override
+	public Users getbyid(int id) {
+		return userrespo.getOne(id);
+	}
 
 
 	@Override

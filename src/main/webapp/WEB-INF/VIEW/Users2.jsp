@@ -1,5 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@page  isELIgnored="false" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +48,7 @@
         <a href="/programme" class="list-group-item list-group-item-action bg-secondary text-light">PROGRAMME</a>
          <a href="/users" class="list-group-item list-group-item-action bg-secondary text-light">USERS</a>
         <a href="/changepassword" class="list-group-item list-group-item-action bg-secondary text-light">CHANGE PASSWORD</a>
-        <a href="/logout" class="list-group-item list-group-item-action bg-secondary text-light">LOGOUT</a>
+
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -77,60 +81,25 @@
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
+<button type="button" class="btn btn-primary" >
+  <a href="addusers">ADD</a>
 </button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> USERS DETAILS</h5>
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-  <form class="form-horizontal" role="form" action="saveuser" method="post">
-      <div class="form-group">
 
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Name" placeholder="Name" required="this" />
-              </div>
-            </div>
-              <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="telephone" placeholder="Telephone" required="this" />
-              </div>
-            </div>
-          
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="email" class="form-control" name="email" placeholder="email" required="this" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="password" class="form-control" name="password" placeholder="password" required="this" />
-              </div>
-            </div>
-             <div class="form-group">
-            
-            </div>
-            
-          
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-           </form>
-      </div>
-    </div>
   </div>
 </div>
-
+</div>
 
           </ul>
         </div>
@@ -146,12 +115,12 @@
                   <th>Role</th>
 
               </tr>
-              <c:forEach items ="${user.id}" var="user" >
+              <c:forEach items ="${user}" var="user" >
                   <tr>
                   <td>${user.Name}</td>
                       <td>${user.telephone}</td>
                       <td>${user.email}</td>
-                      <td>${}</td>
+                      <td><%--${}--%></td>
                       <td>  <button  type="submit"  class="btn btn-primary">  <a href="/edituser?id=${user.id}">EDIT</a> </button> </td>
                       <td>  <button type="submit"  class="btn btn-primary"><a href="/deleteuser?id=${user.id}">DELETE</a> </button> </td>
                   </tr>

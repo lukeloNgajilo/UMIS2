@@ -46,7 +46,7 @@ public class UniversityController {
 	}
 
 
-	@RequestMapping("/adduniversity")
+	@RequestMapping("/admin/adduniversity")
 	public String adduniversity(ModelMap modelmap,Organization organizato,University university)
 	{
 

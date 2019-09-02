@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@page  isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +19,16 @@
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <style type='text/css'>
+        label{
+
+            font-size: 9px;
+
+        }
+
+
+    </style>
 
 </head>
 
@@ -50,7 +62,7 @@
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
-    <div id="page-content-wrapper">
+          <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-secondary border-bottom">
         <button class="btn btn-primary" id="menu-toggle">Menu</button>
@@ -70,18 +82,19 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="#">profile</a>
                         <a class="dropdown-item" href="#">changepassword</a>
-                        <a class="dropdown-item" href="#">logout</a>
+                        <a class="dropdown-item" href="/login">logout</a>
                     </div>
                 </div>
             </li>
           
            
            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADD
+<button type="button" class="btn btn-primary" >
+    <a href="/addusers">ADD</a>
 </button>
-              <a type="button" class="btn btn-primary">
-                  < a href="">EDIT</a>
+
+              <button type="button" class="btn btn-primary" >
+                  <a href="/viewuser">VIEW</a>
               </button>
 
 <!-- Modal -->
@@ -89,55 +102,74 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> USERS DETAILS</h5>
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-  <form class="form-horizontal" role="form" action="saveuser" method="post">
-      <div class="form-group">
 
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="Name" placeholder="Name" value="${user.Name}" required="this" />
-              </div>
-            </div>
-              <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="text" class="form-control" name="telephone" placeholder="Telephone" value="${user.telephone}'required="this" />
-              </div>
-            </div>
-          
-            <div class="form-group">
-              <div class="col-sm-12">
-                  <input type="email" class="form-control" name="email" placeholder="email" value="${user.email}" required="this" />
-              </div>
-            </div>
-
-             <div class="form-group">
-            
-            </div>
-            
-          
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-           </form>
-      </div>
-    </div>
   </div>
 </div>
-
+</div>
 
           </ul>
         </div>
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>e>hear we come    ${msg}</p>
+
+          <div class="">
+              <form class="form-horizontal" role="form" action="/saveuser" method="post">
+                        <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>name</label>
+                          <input type="text" class="form-control" name="Name" placeholder="Name" value="${Users.name}" required="this" />
+                      </div>
+                    </div>
+
+                     <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>telephone</label>
+                          <input type="text" class="form-control" name="telephone" placeholder="Telephone" value="${user.Telephone}" required="this" />
+                       </div>
+                    </div>
+
+                   <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>email</label>
+                          <input type="email" class="form-control" name="email" placeholder="email" value="${user.email}"required="this" />
+                      </div>
+                   </div>
+
+                   <div class="form-group">
+                      <div class="col-sm-12">
+                          <label>password</label>
+                          <input type="password" class="form-control" name="password" placeholder="password" value="${user.password}" required="this" />
+                      </div>
+                         </div>
+
+
+
+
+
+
+                          <button type="submit" class="btn btn-primary">Save changes</button>
+              </form>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->

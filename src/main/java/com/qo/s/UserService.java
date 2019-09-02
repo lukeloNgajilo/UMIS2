@@ -15,6 +15,6 @@ public interface UserService {
 	Users updateuser(Users user);
 	
 	void deleteuser(Users user);
-	   
+	   Users getbyid(int id);
     List<Users> getallusers();
 }

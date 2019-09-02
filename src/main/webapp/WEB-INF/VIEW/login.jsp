@@ -14,8 +14,8 @@
 
 		<form method="post" action="">
 			<h2 style="color: white">UMIS</h2><br><br>
-			<input type="text" name="username" placeholder="Username"><br><br>
-			<input type="password" name="pwd" placeholder="Password"><br><br><br>
+			<input type="text" name="email" placeholder="email"><br><br>
+			<input type="password" name="password" placeholder="Password"><br><br><br>
 			<a href=""><input type="submit" name="login" value="Login"></a><br>
 			
 			<div class="container"><br>

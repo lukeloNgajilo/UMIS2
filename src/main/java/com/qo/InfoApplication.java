@@ -8,8 +8,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 
-@ComponentScan({"com.qo.c","com.qo.s"})
+
 @SpringBootApplication
+@ComponentScan({"com.qo.c","com.qo.s","com.qo.security.config"})
 public class InfoApplication {
 
 	public static void main(String[] args) {
