@@ -1,7 +1,7 @@
 package com.qo.c;
 
 import com.qo.respo.UserRespo;
-import com.qo.s.SecurityService;
+/*import com.qo.s.SecurityService;*/
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -26,11 +26,8 @@ public class UserController {
 	 UserService userservice;
 
 	
-	  @Autowired private BCryptPasswordEncoder encoder;
-	 
-	@Autowired
-	 private SecurityService securityService;
-
+  @Autowired private BCryptPasswordEncoder encoder;
+	
 
 	public static String encrytePassword(String password) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -60,27 +57,17 @@ public class UserController {
 	@RequestMapping("/saveuser")
 	public String saveUser(@ModelAttribute("user")Users user,ModelMap modelMap) {
 
-
-
-		/*String encodedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
-		user.setPassword(encodedPassword);
-*/
-
 	user.setPassword(encoder.encode(user.getPassword()));
-/*user.setPassword(encodedPassword);*/
 
 	userservice.saveuser(user);
 
-	 
 	return"redirect:viewuser";
 	}
-	
 	
 	
   	@RequestMapping("/viewuser")
 	public String viewusers() {
 	  List<Users> user = userservice.getallusers();
-
 
 	  return "Users2";
   	}
@@ -110,22 +97,17 @@ public class UserController {
 
 
  	@RequestMapping(value = "/savelogin",method = RequestMethod.POST)
-	public String login(@RequestParam("email") String email,@RequestParam("password")String password ,ModelMap modelmap,Users user) {
+	public String login(@RequestParam("email") String email,@RequestParam("password")String password ,ModelMap modelmap) {
+
+ 		
+ 		Users user=userrespo.findByEmail(email);
 
  	       String a =  encoder.encode(password);
- 		
-
-
- 
-
-	   boolean loginresponse =securityService.login(email,a);
-
-	 	/*Users user=userrespo.findByEmail(email);*/
-
-	 	if(loginresponse)
+              	 	
+	 	if(encoder.matches(password, user.getPassword()))
 		{
 
-			return"lukelo ngajilo";
+			return"lukelo";
 		}
 
 		else {
@@ -134,7 +116,6 @@ public class UserController {
 			modelmap.addAttribute("msg", "invalid email or paasword");
 		}
 	 	return"login";
-
 
 
 
@@ -151,13 +132,13 @@ public class UserController {
   	return"login";
   	}
 
-@RequestMapping("/login")
- public String manan()
- {
+	@RequestMapping("/login")
+ 	public String manan()
+ 	{
 
 
  	return"login";
- }
+ 	}	
 
 
 
